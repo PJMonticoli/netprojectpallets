@@ -11,9 +11,12 @@
 *.dll
 *.cache
 
-# Archivos de compilación
+# Carpetas generadas automáticamente
 bin/
 obj/
+packages/
+.vs/
+
 
 # Carpetas de configuración del entorno
 .vs/
