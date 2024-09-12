@@ -41,7 +41,7 @@ Public Class DataGridLoader
             _dgv.DataSource = tabla
             _dgv.ReadOnly = True
             _dgv.AllowUserToResizeRows = False
-            _dgv.ColumnHeadersHeight = 30
+            _dgv.ColumnHeadersHeight = 35
             _dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
 
             ' Ocultar la columna NroParteSalida
@@ -56,7 +56,7 @@ Public Class DataGridLoader
 
             ' Establecer el ancho de la columna NroEntrega
             If _dgv.Columns.Contains("NroEntrega") Then
-                _dgv.Columns("NroEntrega").Width = 60
+                _dgv.Columns("NroEntrega").Width = 70
                 _dgv.Columns("NroEntrega").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
             End If
 
@@ -67,7 +67,7 @@ Public Class DataGridLoader
 
             ' Establecer el ancho de la columna RazonSocial
             If _dgv.Columns.Contains("Cliente") Then
-                _dgv.Columns("Cliente").Width = 180
+                _dgv.Columns("Cliente").Width = 190
             End If
 
             ' Agregar columna CantidadPallets si no existe
@@ -75,10 +75,10 @@ Public Class DataGridLoader
                 Dim colCantidadPallets As New DataGridViewTextBoxColumn
                 colCantidadPallets.Name = "CantidadPallets"
                 colCantidadPallets.HeaderText = "Cantidad de Pallets"
-                colCantidadPallets.Width = 80
+                colCantidadPallets.Width = 100
                 _dgv.Columns.Add(colCantidadPallets)
             Else
-                _dgv.Columns("CantidadPallets").Width = 80
+                _dgv.Columns("CantidadPallets").Width = 100
             End If
 
             ' Agregar columna PosicionPalletCamion si no existe
@@ -89,7 +89,7 @@ Public Class DataGridLoader
                 posicionPallet.Width = 100
                 _dgv.Columns.Add(posicionPallet)
             Else
-                _dgv.Columns("PosicionPalletCamion").Width = 80
+                _dgv.Columns("PosicionPalletCamion").Width = 100
             End If
 
             ' Agregar columna CodFletero si no existe (pero la ocultamos)
@@ -285,12 +285,14 @@ Public Class DataGridLoader
             Dim colFechaDev As New DataGridViewTextBoxColumn() With {
                 .Name = "Fecha Devolución",
                 .HeaderText = "Fecha Devolución",
-                .Width = 80
+                .Width = 80,
+                .Visible = False
             }
             Dim colFechaCargaDev As New DataGridViewTextBoxColumn() With {
                 .Name = "Fecha de Carga",
                 .HeaderText = "Fecha Carga",
-                .Width = 80
+                .Width = 80,
+                .Visible = False
             }
 
             Dim colTransportista As New DataGridViewTextBoxColumn() With {

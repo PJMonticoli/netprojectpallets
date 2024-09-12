@@ -177,12 +177,12 @@ Module ModuloFunciones
         Dim validator As New DevPalletValidador()
 
         ' Asegurarse de que las cantidades no sean nulas o vacías y asignar 0 si es necesario
-        Dim cantidadBueno As Integer = If(estadoBueno > 0, estadoBueno, 0)
-        Dim cantidadMalo As Integer = If(estadoMalo > 0, estadoMalo, 0)
-        Dim cantidadVale As Integer = If(estadoVale > 0, estadoVale, 0)
+        Dim cantidadBueno As Integer = If(estadoBueno >= 0, estadoBueno, 0)
+        Dim cantidadMalo As Integer = If(estadoMalo >= 0, estadoMalo, 0)
+        Dim cantidadVale As Integer = If(estadoVale >= 0, estadoVale, 0)
 
         ' Validar y registrar pallets en buen estado
-        If cantidadBueno > 0 Then
+        If cantidadBueno >= 0 Then
             Dim palletBueno As New PalletModel() With {
             .Fecha = fecha,
             .CodFletero = codFletero,
@@ -203,7 +203,7 @@ Module ModuloFunciones
         End If
 
         ' Validar y registrar pallets en mal estado
-        If cantidadMalo > 0 Then
+        If cantidadMalo >= 0 Then
             Dim palletMalo As New PalletModel() With {
             .Fecha = fecha,
             .CodFletero = codFletero,
@@ -224,7 +224,7 @@ Module ModuloFunciones
         End If
 
         ' Validar y registrar pallets con vale
-        If cantidadVale > 0 Then
+        If cantidadVale >= 0 Then
             Dim palletVale As New PalletModel() With {
             .Fecha = fecha,
             .CodFletero = codFletero,

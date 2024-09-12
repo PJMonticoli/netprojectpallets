@@ -1,4 +1,5 @@
 ﻿Imports FluentValidation.Results
+Imports MaterialSkin
 Imports System.Globalization
 Imports System.Reflection
 Imports System.Text.RegularExpressions
@@ -22,7 +23,7 @@ Public Class FrmPrincipal
         cargarGrillas()
         cargarCombos()
         cargarDateTimePickers()
-
+        ColoresFrmPrincipal()
         System.Threading.Thread.CurrentThread.CurrentCulture = New CultureInfo("es-ES")
         System.Threading.Thread.CurrentThread.CurrentUICulture = New CultureInfo("es-ES")
         If Environment.GetCommandLineArgs.Length > 1 Then
@@ -36,7 +37,8 @@ Public Class FrmPrincipal
                     txtNroParteSalida.Text = nroparte
                     txtNroParteSalida.Enabled = False
                     btnBuscar_Click(sender, e)
-
+                    Me.Text = "Pallets por Cliente"
+                    Me.ShowIcon = False
                 ElseIf formulario.ToUpper() = "DevCliente".ToUpper Then
                     DeDoneVengo = 2
                     palletDevCliente.NroParteSalida = nroparte
@@ -45,11 +47,25 @@ Public Class FrmPrincipal
                     txtNroParteSalidaDev.Enabled = False
                     btnLimpiarDevCliente.Visible = False
                     ProcesarParteSalidaDev(nroparte.ToString())
+                    Me.Text = "Regreso Parte Salida"
+                    Me.ShowIcon = False
                 End If
             End If
         End If
     End Sub
 
+    'Private Sub ColoresFrmPrincipal()
+    '    Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
+    '    SkinManager.AddFormToManage(Me)
+    '    SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
+    '    SkinManager.ColorScheme = New ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Primary.BlueGrey500, TextShade.WHITE)
+    'End Sub
+    Private Sub ColoresFrmPrincipal()
+        Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
+        SkinManager.AddFormToManage(Me)
+        SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
+        SkinManager.ColorScheme = New ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Pink200, TextShade.WHITE)
+    End Sub
     Private Sub cargarDateTimePickers()
         dtpFechaDev.Value = Now()
         txtFechaCargaDev.Text = Now()
@@ -101,7 +117,7 @@ Public Class FrmPrincipal
         ComboBoxFunctions.CargarComboGeneral(cboTipoMovimiento, 1)
         cboTipoMovimiento.SelectedIndex = -1
         ComboBoxFunctions.CargarComboGeneral(cboTipoPallet, 1)
-        cboTipoPallet.SelectedIndex = 1
+        cboTipoPallet.SelectedIndex = 2
 
         ' Configurar ComboBox libreriaGuna
         ComboBoxFunctions.CargarComboGeneral(cboCliente, 2)
@@ -145,7 +161,7 @@ Public Class FrmPrincipal
         If(cboCliente.SelectedValue IsNot Nothing, CInt(cboCliente.SelectedValue), CType(Nothing, Integer?)),
         If(cboTransportista.SelectedValue IsNot Nothing, CLng(cboTransportista.SelectedValue), CType(Nothing, Long?)),
         If(Integer.TryParse(txtCantidad.Text, Nothing), Integer.Parse(txtCantidad.Text), 0),
-        txtObservacion.Text,
+        If(String.IsNullOrEmpty(txtObservacion.Text), "Sin observación", txtObservacion.Text),
         If(rbtBuenEstado.Checked, 1, If(rbtMalEstado.Checked, 2, If(rbtVale.Checked, 3, 0))))
 
         If exito Then
@@ -465,7 +481,7 @@ Public Class FrmPrincipal
                     pallet.Cantidad.ToString(),
                     pallet.CantidadMalEstado.ToString(),
                     pallet.CantidadVale.ToString(),
-                    Observacion
+                    If(String.IsNullOrEmpty(Observacion), "Sin observación", Observacion)
                 }
 
                     ' Verificar si estamos editando una fila existente
@@ -651,13 +667,11 @@ Public Class FrmPrincipal
 
     Private Sub txtObservacionDev_KeyDown(sender As Object, e As KeyEventArgs) Handles txtObservacionDev.KeyDown
         If e.KeyCode = Keys.Enter Then
-            If Not String.IsNullOrEmpty(txtObservacionDev.Text) Then
-                btnSigCliente_Click(sender, e)
-                cboClienteDevolucion.Focus()
-                txtObservacionDev.Clear()
-                e.Handled = True
-                e.SuppressKeyPress = True
-            End If
+            btnSigCliente_Click(sender, e)
+            cboClienteDevolucion.Focus()
+            txtObservacionDev.Clear()
+            e.Handled = True
+            e.SuppressKeyPress = True
         End If
     End Sub
 
@@ -758,12 +772,28 @@ Public Class FrmPrincipal
     Private Sub tabControlAsignacion(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
         If (tabControl.SelectedTab.TabIndex = 7) Then
             Me.BeginInvoke(Sub() txtNroParteSalida.Focus())
+            Me.Text = "Pallets por Cliente"
         End If
     End Sub
 
     Private Sub tabControlDevCliente(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
         If (tabControl.SelectedTab.TabIndex = 8) Then
             Me.BeginInvoke(Sub() txtNroParteSalidaDev.Focus())
+            Me.Text = "Regreso Parte Salida"
+        End If
+    End Sub
+
+    Private Sub tabControlRepMov(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
+        If (tabControl.SelectedTab.TabIndex = 9) Then
+            Me.BeginInvoke(Sub() txtNroParteSalidaDev.Focus())
+            Me.Text = "Reporte Movimientos Pallets"
+        End If
+    End Sub
+
+    Private Sub tabControlInfSaldos(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
+        If (tabControl.SelectedTab.TabIndex = 10) Then
+            Me.BeginInvoke(Sub() txtNroParteSalidaDev.Focus())
+            Me.Text = "Informe Saldos Pallets"
         End If
     End Sub
 
@@ -777,11 +807,9 @@ Public Class FrmPrincipal
 #End Region
 
     Private Sub txtObservacion_KeyDown(sender As Object, e As KeyEventArgs) Handles txtObservacion.KeyDown
-        If e.KeyCode = Keys.Enter AndAlso Not String.IsNullOrEmpty(txtObservacion.Text) Then
-            btnRegistrar_Click(sender, e)
-            e.Handled = True
-            e.SuppressKeyPress = True
-        End If
+        btnRegistrar_Click(sender, e)
+        e.Handled = True
+        e.SuppressKeyPress = True
     End Sub
 
     Private Sub txtNroParteSalida_KeyDown(sender As Object, e As KeyEventArgs) Handles txtNroParteSalida.KeyDown
@@ -895,22 +923,19 @@ Public Class FrmPrincipal
         dgvLoader.CargarDatosEnGrillaInforme(controllerInforme, fechaDesde, fechaHasta, cliente, transportista)
     End Sub
 
-    Private Sub dgvClientesDevolucion_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvClientesDevolucion.CellDoubleClick
-        If e.RowIndex >= 0 Then
-            ' Obtener la fila seleccionada
-            Dim selectedRow As DataGridViewRow = dgvClientesDevolucion.Rows(e.RowIndex)
-
-            ' Obtener el valor de la columna "Clientes", que contiene "CodCliente - RazonSocial"
-            Dim cliente As String = selectedRow.Cells("Cliente").Value.ToString()
-
-            ' Extraer el CodCliente de la cadena (asumiendo que es el valor antes del guion)
-            Dim codCliente As String = cliente.Split("-"c)(0).Trim()
-
-            ' Asignar el CodCliente al ComboBox
-            cboClienteDevolucion.SelectedValue = codCliente
+    Private Sub dgvClientesDevolucion_KeyDown(sender As Object, e As KeyEventArgs) Handles dgvClientesDevolucion.KeyDown
+        ' Verificar si la tecla Enter fue presionada
+        If e.KeyCode = Keys.Enter Then
+            e.Handled = True
+            e.SuppressKeyPress = True
+            ' Verificar si hay una fila seleccionada
+            If dgvClientesDevolucion.CurrentRow IsNot Nothing Then
+                Dim selectedRow As DataGridViewRow = dgvClientesDevolucion.CurrentRow
+                Dim cliente As String = selectedRow.Cells("Cliente").Value.ToString()
+                Dim codCliente As String = cliente.Split("-"c)(0).Trim()
+                cboClienteDevolucion.SelectedValue = codCliente
+            End If
         End If
     End Sub
-
-
 
 End Class

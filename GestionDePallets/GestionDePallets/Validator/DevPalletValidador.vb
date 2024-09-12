@@ -5,8 +5,7 @@ Public Class DevPalletValidador
 
     Public Sub New()
         RuleFor(Function(p) p.Cantidad).
-            NotEmpty().WithMessage("Revise y complete las cantidades de pallets.").
-            GreaterThan(0).WithMessage("La cantidad debe ser mayor que cero.")
+         GreaterThanOrEqualTo(0).WithMessage("La cantidad debe ser mayor o igual a cero.")
 
         RuleFor(Function(p) p.Fecha).
             NotEmpty().WithMessage("La fecha es requerida.").
@@ -14,8 +13,7 @@ Public Class DevPalletValidador
 
         RuleFor(Function(p) p.CodCliente).
             NotEmpty().WithMessage("Campo cliente requerido, complete por favor.")
-
         RuleFor(Function(p) p.Observacion).
-            NotEmpty().WithMessage("Observación es requerida, complete por favor.")
+        MaximumLength(50).WithMessage("La observación no puede exceder los 50 caracteres.")
     End Sub
 End Class
