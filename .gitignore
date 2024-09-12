@@ -1,0 +1,33 @@
+# Archivos de configuración del sistema
+*.user
+*.suo
+*.userosscache
+*.suo
+*.vssscc
+*.vspscc
+*.pdb
+*.obj
+*.exe
+*.dll
+*.cache
+
+# Archivos de compilación
+bin/
+obj/
+
+# Carpetas de configuración del entorno
+.vs/
+# .idea/ # si usas IntelliJ o WebStorm
+
+# Archivos temporales de VS
+*.tmp
+*.log
+*.dmp
+
+# Otros
+*.bak
+*.swp
+*.swo
+*.class
+*.jar
+*.war
