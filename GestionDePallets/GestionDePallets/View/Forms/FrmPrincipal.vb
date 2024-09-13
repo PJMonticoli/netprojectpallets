@@ -54,17 +54,11 @@ Public Class FrmPrincipal
         End If
     End Sub
 
-    'Private Sub ColoresFrmPrincipal()
-    '    Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
-    '    SkinManager.AddFormToManage(Me)
-    '    SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
-    '    SkinManager.ColorScheme = New ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Primary.BlueGrey500, TextShade.WHITE)
-    'End Sub
     Private Sub ColoresFrmPrincipal()
         Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
-        SkinManager.AddFormToManage(Me)
+        'SkinManager.AddFormToManage(Me)
         SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
-        SkinManager.ColorScheme = New ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.Pink200, TextShade.WHITE)
+        SkinManager.ColorScheme = New ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Primary.BlueGrey500, TextShade.WHITE)
     End Sub
     Private Sub cargarDateTimePickers()
         dtpFechaDev.Value = Now()
@@ -762,10 +756,17 @@ Public Class FrmPrincipal
             Application.Exit()
         End If
     End Sub
+    Private Sub tabControlInicio(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
+        If (tabControl.SelectedTab.Text = "Inicio") Then
+            Me.BeginInvoke(Sub() dtpFecha.Focus())
+            Me.Text = "Gestión de Pallets"
+        End If
+    End Sub
 
     Private Sub tabControlMovimiento(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
-        If (tabControl.SelectedTab.TabIndex = 0) Then
+        If (tabControl.SelectedTab.Text = "Pallets") Then
             Me.BeginInvoke(Sub() dtpFecha.Focus())
+            Me.Text = "Carga de Movimientos Pallets"
         End If
     End Sub
 
