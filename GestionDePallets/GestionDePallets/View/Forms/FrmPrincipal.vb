@@ -30,25 +30,31 @@ Public Class FrmPrincipal
             If Environment.GetCommandLineArgs(1).Length >= 2 Then
                 Dim nroparte As Integer = Environment.GetCommandLineArgs(1)
                 Dim formulario As String = Environment.GetCommandLineArgs(2)
+                Me.DrawerTabControl = Nothing 'Me oculta el boton de mi tabcontrol para evitar navegacion entre pestañas
+                txtNroParteSalidaDev.Enabled = False
+                txtNroParteSalida.Enabled = False
                 If formulario.ToUpper() = "PalletsCliente".ToUpper Then
                     DeDoneVengo = 1
                     palletDevCliente.NroParteSalida = nroparte
                     tabControl.SelectedIndex = 2
                     txtNroParteSalida.Text = nroparte
-                    txtNroParteSalida.Enabled = False
                     btnBuscar_Click(sender, e)
                     Me.Text = "Pallets por Cliente"
-                    Me.ShowIcon = False
-                ElseIf formulario.ToUpper() = "DevCliente".ToUpper Then
+                ElseIf formulario.ToUpper() = "DevCliente".ToUpper AndAlso nroparte <> "" Then
                     DeDoneVengo = 2
                     palletDevCliente.NroParteSalida = nroparte
                     tabControl.SelectedIndex = 3
                     txtNroParteSalidaDev.Text = nroparte
-                    txtNroParteSalidaDev.Enabled = False
                     btnLimpiarDevCliente.Visible = False
                     ProcesarParteSalidaDev(nroparte.ToString())
                     Me.Text = "Regreso Parte Salida"
-                    Me.ShowIcon = False
+                ElseIf formulario.ToUpper() = "DevCliente".ToUpper Then
+                    DeDoneVengo = 2
+                    palletDevCliente.NroParteSalida = nroparte
+                    tabControl.SelectedIndex = 3
+                    btnLimpiarDevCliente.Visible = False
+                    ProcesarParteSalidaDev(nroparte.ToString())
+                    Me.Text = "Regreso Parte Salida"
                 End If
             End If
         End If
@@ -403,6 +409,7 @@ Public Class FrmPrincipal
 
             If transportistaId <> 0 Then
                 cboTransportistaDev.SelectedValue = transportistaId
+                cboTransportistaDev.Enabled = False
             Else
                 MsgBox("Transportista no encontrado en la lista.", MsgBoxStyle.Information, "Aviso")
             End If

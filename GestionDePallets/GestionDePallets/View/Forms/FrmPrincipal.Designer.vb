@@ -115,10 +115,12 @@ Partial Class FrmPrincipal
         Me.PalletsCliente = New System.Windows.Forms.TabPage()
         Me.MaterialCard8 = New MaterialSkin.Controls.MaterialCard()
         Me.txtNroParteSalida = New MaterialSkin.Controls.MaterialTextBox()
-        Me.dgvParteSalida = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.btnBuscar = New MaterialSkin.Controls.MaterialButton()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.MaterialCard9 = New MaterialSkin.Controls.MaterialCard()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.btnBuscar = New MaterialSkin.Controls.MaterialButton()
+        Me.dgvParteSalida = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.groupTotales = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.txtCantTotalPallets = New Guna.UI2.WinForms.Guna2TextBox()
         Me.txtPalletsInsertados = New Guna.UI2.WinForms.Guna2TextBox()
@@ -144,6 +146,7 @@ Partial Class FrmPrincipal
         Me.DevCliente = New System.Windows.Forms.TabPage()
         Me.MaterialCard10 = New MaterialSkin.Controls.MaterialCard()
         Me.MaterialCard11 = New MaterialSkin.Controls.MaterialCard()
+        Me.cboTransportistaDev = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txtCantBuenEstado = New MaterialSkin.Controls.MaterialTextBox()
@@ -219,9 +222,6 @@ Partial Class FrmPrincipal
         Me.Guna2Elipse2 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2Elipse3 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2Elipse4 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
-        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.cboTransportistaDev = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.tabControl.SuspendLayout()
         Me.Inicio.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -240,8 +240,9 @@ Partial Class FrmPrincipal
         Me.GroupBox2.SuspendLayout()
         Me.PalletsCliente.SuspendLayout()
         Me.MaterialCard8.SuspendLayout()
-        CType(Me.dgvParteSalida, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MaterialCard9.SuspendLayout()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvParteSalida, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupTotales.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupAsignacion.SuspendLayout()
@@ -260,7 +261,6 @@ Partial Class FrmPrincipal
         Me.MaterialCard13.SuspendLayout()
         CType(Me.dgvInformeSaldos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tabControl
@@ -1324,6 +1324,70 @@ Partial Class FrmPrincipal
         Me.txtNroParteSalida.Text = ""
         Me.txtNroParteSalida.TrailingIcon = Nothing
         '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(29, 74)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(137, 18)
+        Me.Label23.TabIndex = 51
+        Me.Label23.Text = "Nro. Parte Salida"
+        '
+        'MaterialCard9
+        '
+        Me.MaterialCard9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.MaterialCard9.Controls.Add(Me.Guna2PictureBox2)
+        Me.MaterialCard9.Controls.Add(Me.btnBuscar)
+        Me.MaterialCard9.Controls.Add(Me.dgvParteSalida)
+        Me.MaterialCard9.Controls.Add(Me.Label16)
+        Me.MaterialCard9.Controls.Add(Me.groupTotales)
+        Me.MaterialCard9.Controls.Add(Me.txtFechaCargaEgreso)
+        Me.MaterialCard9.Controls.Add(Me.Label53)
+        Me.MaterialCard9.Controls.Add(Me.PictureBox7)
+        Me.MaterialCard9.Controls.Add(Me.btnRegistrarAsignacion)
+        Me.MaterialCard9.Controls.Add(Me.groupAsignacion)
+        Me.MaterialCard9.Depth = 0
+        Me.MaterialCard9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MaterialCard9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.MaterialCard9.Location = New System.Drawing.Point(14, 14)
+        Me.MaterialCard9.Margin = New System.Windows.Forms.Padding(14)
+        Me.MaterialCard9.MouseState = MaterialSkin.MouseState.HOVER
+        Me.MaterialCard9.Name = "MaterialCard9"
+        Me.MaterialCard9.Padding = New System.Windows.Forms.Padding(14)
+        Me.MaterialCard9.Size = New System.Drawing.Size(1011, 525)
+        Me.MaterialCard9.TabIndex = 63
+        '
+        'Guna2PictureBox2
+        '
+        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox2.ImageRotate = 0!
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(8, 342)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(26, 26)
+        Me.Guna2PictureBox2.TabIndex = 81
+        Me.Guna2PictureBox2.TabStop = False
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnBuscar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.[Default]
+        Me.btnBuscar.Depth = 0
+        Me.btnBuscar.HighEmphasis = True
+        Me.btnBuscar.Icon = CType(resources.GetObject("btnBuscar.Icon"), System.Drawing.Image)
+        Me.btnBuscar.Location = New System.Drawing.Point(242, 95)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.NoAccentTextColor = System.Drawing.Color.Empty
+        Me.btnBuscar.Size = New System.Drawing.Size(105, 36)
+        Me.btnBuscar.TabIndex = 1
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
+        Me.btnBuscar.UseAccentColor = False
+        Me.btnBuscar.UseVisualStyleBackColor = True
+        '
         'dgvParteSalida
         '
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
@@ -1375,59 +1439,16 @@ Partial Class FrmPrincipal
         Me.dgvParteSalida.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         Me.dgvParteSalida.Visible = False
         '
-        'btnBuscar
+        'Label16
         '
-        Me.btnBuscar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnBuscar.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.[Default]
-        Me.btnBuscar.Depth = 0
-        Me.btnBuscar.HighEmphasis = True
-        Me.btnBuscar.Icon = CType(resources.GetObject("btnBuscar.Icon"), System.Drawing.Image)
-        Me.btnBuscar.Location = New System.Drawing.Point(242, 95)
-        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-        Me.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER
-        Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.NoAccentTextColor = System.Drawing.Color.Empty
-        Me.btnBuscar.Size = New System.Drawing.Size(105, 36)
-        Me.btnBuscar.TabIndex = 1
-        Me.btnBuscar.Text = "Buscar"
-        Me.btnBuscar.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained
-        Me.btnBuscar.UseAccentColor = False
-        Me.btnBuscar.UseVisualStyleBackColor = True
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(29, 74)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(137, 18)
-        Me.Label23.TabIndex = 51
-        Me.Label23.Text = "Nro. Parte Salida"
-        '
-        'MaterialCard9
-        '
-        Me.MaterialCard9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.MaterialCard9.Controls.Add(Me.Guna2PictureBox2)
-        Me.MaterialCard9.Controls.Add(Me.btnBuscar)
-        Me.MaterialCard9.Controls.Add(Me.dgvParteSalida)
-        Me.MaterialCard9.Controls.Add(Me.Label16)
-        Me.MaterialCard9.Controls.Add(Me.groupTotales)
-        Me.MaterialCard9.Controls.Add(Me.txtFechaCargaEgreso)
-        Me.MaterialCard9.Controls.Add(Me.Label53)
-        Me.MaterialCard9.Controls.Add(Me.PictureBox7)
-        Me.MaterialCard9.Controls.Add(Me.btnRegistrarAsignacion)
-        Me.MaterialCard9.Controls.Add(Me.groupAsignacion)
-        Me.MaterialCard9.Depth = 0
-        Me.MaterialCard9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MaterialCard9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.MaterialCard9.Location = New System.Drawing.Point(14, 14)
-        Me.MaterialCard9.Margin = New System.Windows.Forms.Padding(14)
-        Me.MaterialCard9.MouseState = MaterialSkin.MouseState.HOVER
-        Me.MaterialCard9.Name = "MaterialCard9"
-        Me.MaterialCard9.Padding = New System.Windows.Forms.Padding(14)
-        Me.MaterialCard9.Size = New System.Drawing.Size(1011, 525)
-        Me.MaterialCard9.TabIndex = 63
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label16.Location = New System.Drawing.Point(31, 353)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(306, 15)
+        Me.Label16.TabIndex = 80
+        Me.Label16.Text = "Doble Click en tabla para modificar un registro"
         '
         'groupTotales
         '
@@ -1872,6 +1893,22 @@ Partial Class FrmPrincipal
         Me.MaterialCard11.Padding = New System.Windows.Forms.Padding(14)
         Me.MaterialCard11.Size = New System.Drawing.Size(1011, 525)
         Me.MaterialCard11.TabIndex = 38
+        '
+        'cboTransportistaDev
+        '
+        Me.cboTransportistaDev.BackColor = System.Drawing.Color.Transparent
+        Me.cboTransportistaDev.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cboTransportistaDev.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboTransportistaDev.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboTransportistaDev.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboTransportistaDev.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboTransportistaDev.ForeColor = System.Drawing.Color.Black
+        Me.cboTransportistaDev.ItemHeight = 16
+        Me.cboTransportistaDev.Location = New System.Drawing.Point(17, 73)
+        Me.cboTransportistaDev.MaxDropDownItems = 4
+        Me.cboTransportistaDev.Name = "cboTransportistaDev"
+        Me.cboTransportistaDev.Size = New System.Drawing.Size(349, 22)
+        Me.cboTransportistaDev.TabIndex = 80
         '
         'Guna2PictureBox1
         '
@@ -3102,44 +3139,6 @@ Partial Class FrmPrincipal
         '
         Me.Guna2Elipse3.TargetControl = Me.groupAsignacion
         '
-        'Guna2PictureBox2
-        '
-        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
-        Me.Guna2PictureBox2.ImageRotate = 0!
-        Me.Guna2PictureBox2.Location = New System.Drawing.Point(8, 342)
-        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
-        Me.Guna2PictureBox2.Size = New System.Drawing.Size(26, 26)
-        Me.Guna2PictureBox2.TabIndex = 81
-        Me.Guna2PictureBox2.TabStop = False
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label16.Location = New System.Drawing.Point(31, 353)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(306, 15)
-        Me.Label16.TabIndex = 80
-        Me.Label16.Text = "Doble Click en tabla para modificar un registro"
-        '
-        'cboTransportistaDev
-        '
-        Me.cboTransportistaDev.BackColor = System.Drawing.Color.Transparent
-        Me.cboTransportistaDev.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.cboTransportistaDev.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboTransportistaDev.Enabled = False
-        Me.cboTransportistaDev.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboTransportistaDev.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.cboTransportistaDev.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cboTransportistaDev.ForeColor = System.Drawing.Color.Black
-        Me.cboTransportistaDev.ItemHeight = 16
-        Me.cboTransportistaDev.Location = New System.Drawing.Point(17, 73)
-        Me.cboTransportistaDev.MaxDropDownItems = 4
-        Me.cboTransportistaDev.Name = "cboTransportistaDev"
-        Me.cboTransportistaDev.Size = New System.Drawing.Size(349, 22)
-        Me.cboTransportistaDev.TabIndex = 80
-        '
         'FrmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3180,9 +3179,10 @@ Partial Class FrmPrincipal
         Me.PalletsCliente.ResumeLayout(False)
         Me.MaterialCard8.ResumeLayout(False)
         Me.MaterialCard8.PerformLayout()
-        CType(Me.dgvParteSalida, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MaterialCard9.ResumeLayout(False)
         Me.MaterialCard9.PerformLayout()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvParteSalida, System.ComponentModel.ISupportInitialize).EndInit()
         Me.groupTotales.ResumeLayout(False)
         Me.groupTotales.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -3207,7 +3207,6 @@ Partial Class FrmPrincipal
         Me.MaterialCard13.PerformLayout()
         CType(Me.dgvInformeSaldos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
