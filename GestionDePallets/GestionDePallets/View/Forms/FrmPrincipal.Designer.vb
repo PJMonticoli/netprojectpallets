@@ -24,24 +24,24 @@ Partial Class FrmPrincipal
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmPrincipal))
-        Dim DataGridViewCellStyle328 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle329 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle330 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle325 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle326 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle327 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle331 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle332 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle333 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle334 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle335 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle336 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle337 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle338 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle339 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle340 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle341 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle342 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle79 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle80 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle81 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle82 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle83 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle84 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle73 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle74 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle75 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle76 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle77 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle78 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle85 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle86 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle87 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle88 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle89 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle90 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.tabControl = New MaterialSkin.Controls.MaterialTabControl()
         Me.Inicio = New System.Windows.Forms.TabPage()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
@@ -144,12 +144,12 @@ Partial Class FrmPrincipal
         Me.DevCliente = New System.Windows.Forms.TabPage()
         Me.MaterialCard10 = New MaterialSkin.Controls.MaterialCard()
         Me.MaterialCard11 = New MaterialSkin.Controls.MaterialCard()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.txtCantBuenEstado = New MaterialSkin.Controls.MaterialTextBox()
         Me.txtCantMalEstado = New MaterialSkin.Controls.MaterialTextBox()
         Me.txtCantVale = New MaterialSkin.Controls.MaterialTextBox()
         Me.Label46 = New System.Windows.Forms.Label()
-        Me.txtTransportista = New Guna.UI2.WinForms.Guna2TextBox()
         Me.dgvClientesDevolucion = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.btnLimpiarDevCliente = New MaterialSkin.Controls.MaterialButton()
         Me.txtObservacionDev = New MaterialSkin.Controls.MaterialTextBox()
@@ -182,6 +182,10 @@ Partial Class FrmPrincipal
         Me.cboTraReporte = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.btnTraReporte = New Guna.UI2.WinForms.Guna2Button()
         Me.Label41 = New System.Windows.Forms.Label()
+        Me.groupEstados = New System.Windows.Forms.GroupBox()
+        Me.rbtValeRep = New MaterialSkin.Controls.MaterialRadioButton()
+        Me.rbtBuenoRep = New MaterialSkin.Controls.MaterialRadioButton()
+        Me.rbtMaloRep = New MaterialSkin.Controls.MaterialRadioButton()
         Me.cboClienteReporte = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.btnClienteReporte = New Guna.UI2.WinForms.Guna2Button()
         Me.Label40 = New System.Windows.Forms.Label()
@@ -215,10 +219,9 @@ Partial Class FrmPrincipal
         Me.Guna2Elipse2 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2Elipse3 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2Elipse4 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
-        Me.rbtMaloRep = New MaterialSkin.Controls.MaterialRadioButton()
-        Me.rbtBuenoRep = New MaterialSkin.Controls.MaterialRadioButton()
-        Me.rbtValeRep = New MaterialSkin.Controls.MaterialRadioButton()
-        Me.groupEstados = New System.Windows.Forms.GroupBox()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.cboTransportistaDev = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.tabControl.SuspendLayout()
         Me.Inicio.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -245,17 +248,19 @@ Partial Class FrmPrincipal
         Me.DevCliente.SuspendLayout()
         Me.MaterialCard10.SuspendLayout()
         Me.MaterialCard11.SuspendLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvClientesDevolucion, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvDevCliente, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ReporteMovimientos.SuspendLayout()
         Me.MaterialCard12.SuspendLayout()
+        Me.groupEstados.SuspendLayout()
         CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.InformeSaldos.SuspendLayout()
         Me.MaterialCard13.SuspendLayout()
         CType(Me.dgvInformeSaldos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.groupEstados.SuspendLayout()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tabControl
@@ -297,7 +302,7 @@ Partial Class FrmPrincipal
         Me.Inicio.ImageKey = "casa.png"
         Me.Inicio.Location = New System.Drawing.Point(4, 37)
         Me.Inicio.Name = "Inicio"
-        Me.Inicio.Size = New System.Drawing.Size(1044, 553)
+        Me.Inicio.Size = New System.Drawing.Size(1039, 553)
         Me.Inicio.TabIndex = 5
         Me.Inicio.Text = "Inicio"
         Me.Inicio.ToolTipText = "Inicio"
@@ -728,7 +733,7 @@ Partial Class FrmPrincipal
         Me.Pallets.Location = New System.Drawing.Point(4, 37)
         Me.Pallets.Name = "Pallets"
         Me.Pallets.Padding = New System.Windows.Forms.Padding(3)
-        Me.Pallets.Size = New System.Drawing.Size(1063, 553)
+        Me.Pallets.Size = New System.Drawing.Size(1039, 553)
         Me.Pallets.TabIndex = 0
         Me.Pallets.Text = "Carga Mov. Pallets"
         Me.Pallets.ToolTipText = "Carga Mov. Pallets"
@@ -745,7 +750,7 @@ Partial Class FrmPrincipal
         Me.MaterialCard1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialCard1.Name = "MaterialCard1"
         Me.MaterialCard1.Padding = New System.Windows.Forms.Padding(14)
-        Me.MaterialCard1.Size = New System.Drawing.Size(1057, 547)
+        Me.MaterialCard1.Size = New System.Drawing.Size(1033, 547)
         Me.MaterialCard1.TabIndex = 0
         '
         'MaterialCard7
@@ -787,7 +792,7 @@ Partial Class FrmPrincipal
         Me.MaterialCard7.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialCard7.Name = "MaterialCard7"
         Me.MaterialCard7.Padding = New System.Windows.Forms.Padding(14)
-        Me.MaterialCard7.Size = New System.Drawing.Size(1029, 519)
+        Me.MaterialCard7.Size = New System.Drawing.Size(1005, 519)
         Me.MaterialCard7.TabIndex = 0
         '
         'txtObservacion
@@ -832,26 +837,26 @@ Partial Class FrmPrincipal
         '
         'dgvMovPallets
         '
-        DataGridViewCellStyle328.BackColor = System.Drawing.Color.White
-        Me.dgvMovPallets.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle328
-        DataGridViewCellStyle329.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle329.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        DataGridViewCellStyle329.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle329.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle329.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        DataGridViewCellStyle329.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle329.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvMovPallets.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle329
+        DataGridViewCellStyle79.BackColor = System.Drawing.Color.White
+        Me.dgvMovPallets.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle79
+        DataGridViewCellStyle80.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle80.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        DataGridViewCellStyle80.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle80.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle80.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        DataGridViewCellStyle80.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle80.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvMovPallets.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle80
         Me.dgvMovPallets.ColumnHeadersHeight = 4
         Me.dgvMovPallets.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        DataGridViewCellStyle330.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle330.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle330.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle330.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle330.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle330.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle330.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvMovPallets.DefaultCellStyle = DataGridViewCellStyle330
+        DataGridViewCellStyle81.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle81.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle81.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle81.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle81.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle81.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle81.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvMovPallets.DefaultCellStyle = DataGridViewCellStyle81
         Me.dgvMovPallets.GridColor = System.Drawing.Color.Silver
         Me.dgvMovPallets.Location = New System.Drawing.Point(17, 406)
         Me.dgvMovPallets.Name = "dgvMovPallets"
@@ -890,7 +895,7 @@ Partial Class FrmPrincipal
         Me.cboTransportista.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cboTransportista.ForeColor = System.Drawing.Color.Black
         Me.cboTransportista.ItemHeight = 16
-        Me.cboTransportista.Location = New System.Drawing.Point(371, 258)
+        Me.cboTransportista.Location = New System.Drawing.Point(348, 258)
         Me.cboTransportista.MaxDropDownItems = 4
         Me.cboTransportista.Name = "cboTransportista"
         Me.cboTransportista.Size = New System.Drawing.Size(317, 22)
@@ -928,7 +933,7 @@ Partial Class FrmPrincipal
         Me.btnBuscarTransportista.HoverState.FillColor = System.Drawing.Color.Silver
         Me.btnBuscarTransportista.Image = CType(resources.GetObject("btnBuscarTransportista.Image"), System.Drawing.Image)
         Me.btnBuscarTransportista.ImageSize = New System.Drawing.Size(25, 25)
-        Me.btnBuscarTransportista.Location = New System.Drawing.Point(482, 228)
+        Me.btnBuscarTransportista.Location = New System.Drawing.Point(459, 228)
         Me.btnBuscarTransportista.Name = "btnBuscarTransportista"
         Me.btnBuscarTransportista.Size = New System.Drawing.Size(92, 23)
         Me.btnBuscarTransportista.TabIndex = 41
@@ -1024,7 +1029,7 @@ Partial Class FrmPrincipal
         '
         Me.lblTranportista.AutoSize = True
         Me.lblTranportista.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.lblTranportista.Location = New System.Drawing.Point(368, 227)
+        Me.lblTranportista.Location = New System.Drawing.Point(345, 227)
         Me.lblTranportista.Name = "lblTranportista"
         Me.lblTranportista.Size = New System.Drawing.Size(108, 18)
         Me.lblTranportista.TabIndex = 30
@@ -1289,8 +1294,6 @@ Partial Class FrmPrincipal
         '
         Me.MaterialCard8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.MaterialCard8.Controls.Add(Me.txtNroParteSalida)
-        Me.MaterialCard8.Controls.Add(Me.dgvParteSalida)
-        Me.MaterialCard8.Controls.Add(Me.btnBuscar)
         Me.MaterialCard8.Controls.Add(Me.Label23)
         Me.MaterialCard8.Controls.Add(Me.MaterialCard9)
         Me.MaterialCard8.Depth = 0
@@ -1311,7 +1314,7 @@ Partial Class FrmPrincipal
         Me.txtNroParteSalida.Depth = 0
         Me.txtNroParteSalida.Font = New System.Drawing.Font("Roboto", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.txtNroParteSalida.LeadingIcon = Nothing
-        Me.txtNroParteSalida.Location = New System.Drawing.Point(29, 111)
+        Me.txtNroParteSalida.Location = New System.Drawing.Point(29, 95)
         Me.txtNroParteSalida.MaxLength = 50
         Me.txtNroParteSalida.MouseState = MaterialSkin.MouseState.OUT
         Me.txtNroParteSalida.Multiline = False
@@ -1323,31 +1326,31 @@ Partial Class FrmPrincipal
         '
         'dgvParteSalida
         '
-        DataGridViewCellStyle325.BackColor = System.Drawing.Color.White
-        Me.dgvParteSalida.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle325
-        DataGridViewCellStyle326.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle326.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        DataGridViewCellStyle326.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle326.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle326.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        DataGridViewCellStyle326.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle326.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvParteSalida.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle326
+        DataGridViewCellStyle82.BackColor = System.Drawing.Color.White
+        Me.dgvParteSalida.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle82
+        DataGridViewCellStyle83.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle83.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        DataGridViewCellStyle83.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle83.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle83.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        DataGridViewCellStyle83.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle83.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvParteSalida.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle83
         Me.dgvParteSalida.ColumnHeadersHeight = 4
         Me.dgvParteSalida.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        DataGridViewCellStyle327.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle327.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle327.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle327.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle327.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle327.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle327.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvParteSalida.DefaultCellStyle = DataGridViewCellStyle327
+        DataGridViewCellStyle84.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle84.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle84.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle84.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle84.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle84.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle84.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvParteSalida.DefaultCellStyle = DataGridViewCellStyle84
         Me.dgvParteSalida.GridColor = System.Drawing.Color.Silver
-        Me.dgvParteSalida.Location = New System.Drawing.Point(29, 162)
+        Me.dgvParteSalida.Location = New System.Drawing.Point(3, 136)
         Me.dgvParteSalida.Name = "dgvParteSalida"
         Me.dgvParteSalida.RowHeadersVisible = False
-        Me.dgvParteSalida.Size = New System.Drawing.Size(467, 208)
+        Me.dgvParteSalida.Size = New System.Drawing.Size(467, 200)
         Me.dgvParteSalida.TabIndex = 2
         Me.dgvParteSalida.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvParteSalida.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -1380,7 +1383,7 @@ Partial Class FrmPrincipal
         Me.btnBuscar.Depth = 0
         Me.btnBuscar.HighEmphasis = True
         Me.btnBuscar.Icon = CType(resources.GetObject("btnBuscar.Icon"), System.Drawing.Image)
-        Me.btnBuscar.Location = New System.Drawing.Point(261, 119)
+        Me.btnBuscar.Location = New System.Drawing.Point(242, 95)
         Me.btnBuscar.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.btnBuscar.MouseState = MaterialSkin.MouseState.HOVER
         Me.btnBuscar.Name = "btnBuscar"
@@ -1396,7 +1399,7 @@ Partial Class FrmPrincipal
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(29, 91)
+        Me.Label23.Location = New System.Drawing.Point(29, 74)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(137, 18)
         Me.Label23.TabIndex = 51
@@ -1405,6 +1408,10 @@ Partial Class FrmPrincipal
         'MaterialCard9
         '
         Me.MaterialCard9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.MaterialCard9.Controls.Add(Me.Guna2PictureBox2)
+        Me.MaterialCard9.Controls.Add(Me.btnBuscar)
+        Me.MaterialCard9.Controls.Add(Me.dgvParteSalida)
+        Me.MaterialCard9.Controls.Add(Me.Label16)
         Me.MaterialCard9.Controls.Add(Me.groupTotales)
         Me.MaterialCard9.Controls.Add(Me.txtFechaCargaEgreso)
         Me.MaterialCard9.Controls.Add(Me.Label53)
@@ -1431,7 +1438,7 @@ Partial Class FrmPrincipal
         Me.groupTotales.CustomBorderColor = System.Drawing.Color.FromArgb(CType(CType(112, Byte), Integer), CType(CType(130, Byte), Integer), CType(CType(143, Byte), Integer))
         Me.groupTotales.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.groupTotales.ForeColor = System.Drawing.Color.White
-        Me.groupTotales.Location = New System.Drawing.Point(288, 362)
+        Me.groupTotales.Location = New System.Drawing.Point(288, 372)
         Me.groupTotales.Name = "groupTotales"
         Me.groupTotales.Size = New System.Drawing.Size(194, 100)
         Me.groupTotales.TabIndex = 61
@@ -1549,7 +1556,7 @@ Partial Class FrmPrincipal
         Me.btnRegistrarAsignacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegistrarAsignacion.HighEmphasis = True
         Me.btnRegistrarAsignacion.Icon = CType(resources.GetObject("btnRegistrarAsignacion.Icon"), System.Drawing.Image)
-        Me.btnRegistrarAsignacion.Location = New System.Drawing.Point(355, 471)
+        Me.btnRegistrarAsignacion.Location = New System.Drawing.Point(355, 478)
         Me.btnRegistrarAsignacion.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.btnRegistrarAsignacion.MouseState = MaterialSkin.MouseState.HOVER
         Me.btnRegistrarAsignacion.Name = "btnRegistrarAsignacion"
@@ -1831,12 +1838,13 @@ Partial Class FrmPrincipal
         'MaterialCard11
         '
         Me.MaterialCard11.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.MaterialCard11.Controls.Add(Me.cboTransportistaDev)
+        Me.MaterialCard11.Controls.Add(Me.Guna2PictureBox1)
         Me.MaterialCard11.Controls.Add(Me.Label15)
         Me.MaterialCard11.Controls.Add(Me.txtCantBuenEstado)
         Me.MaterialCard11.Controls.Add(Me.txtCantMalEstado)
         Me.MaterialCard11.Controls.Add(Me.txtCantVale)
         Me.MaterialCard11.Controls.Add(Me.Label46)
-        Me.MaterialCard11.Controls.Add(Me.txtTransportista)
         Me.MaterialCard11.Controls.Add(Me.dgvClientesDevolucion)
         Me.MaterialCard11.Controls.Add(Me.btnLimpiarDevCliente)
         Me.MaterialCard11.Controls.Add(Me.txtObservacionDev)
@@ -1865,11 +1873,21 @@ Partial Class FrmPrincipal
         Me.MaterialCard11.Size = New System.Drawing.Size(1011, 525)
         Me.MaterialCard11.TabIndex = 38
         '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(400, 275)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(26, 26)
+        Me.Guna2PictureBox1.TabIndex = 79
+        Me.Guna2PictureBox1.TabStop = False
+        '
         'Label15
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label15.Location = New System.Drawing.Point(395, 103)
+        Me.Label15.Location = New System.Drawing.Point(395, 113)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(92, 18)
         Me.Label15.TabIndex = 78
@@ -1883,7 +1901,7 @@ Partial Class FrmPrincipal
         Me.txtCantBuenEstado.Font = New System.Drawing.Font("Roboto", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.txtCantBuenEstado.Hint = "Cant. Buen Estado"
         Me.txtCantBuenEstado.LeadingIcon = Nothing
-        Me.txtCantBuenEstado.Location = New System.Drawing.Point(397, 126)
+        Me.txtCantBuenEstado.Location = New System.Drawing.Point(397, 136)
         Me.txtCantBuenEstado.MaxLength = 50
         Me.txtCantBuenEstado.MouseState = MaterialSkin.MouseState.OUT
         Me.txtCantBuenEstado.Multiline = False
@@ -1901,7 +1919,7 @@ Partial Class FrmPrincipal
         Me.txtCantMalEstado.Font = New System.Drawing.Font("Roboto", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.txtCantMalEstado.Hint = "Cant. Mal Estado"
         Me.txtCantMalEstado.LeadingIcon = Nothing
-        Me.txtCantMalEstado.Location = New System.Drawing.Point(570, 126)
+        Me.txtCantMalEstado.Location = New System.Drawing.Point(570, 136)
         Me.txtCantMalEstado.MaxLength = 50
         Me.txtCantMalEstado.MouseState = MaterialSkin.MouseState.OUT
         Me.txtCantMalEstado.Multiline = False
@@ -1919,7 +1937,7 @@ Partial Class FrmPrincipal
         Me.txtCantVale.Font = New System.Drawing.Font("Roboto", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.txtCantVale.Hint = "Cant. Vale"
         Me.txtCantVale.LeadingIcon = Nothing
-        Me.txtCantVale.Location = New System.Drawing.Point(741, 126)
+        Me.txtCantVale.Location = New System.Drawing.Point(741, 136)
         Me.txtCantVale.MaxLength = 50
         Me.txtCantVale.MouseState = MaterialSkin.MouseState.OUT
         Me.txtCantVale.Multiline = False
@@ -1934,60 +1952,39 @@ Partial Class FrmPrincipal
         Me.Label46.AutoSize = True
         Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
         Me.Label46.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label46.Location = New System.Drawing.Point(395, 267)
+        Me.Label46.Location = New System.Drawing.Point(428, 283)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(358, 18)
         Me.Label46.TabIndex = 71
         Me.Label46.Text = "Doble Click en tabla para modificar un registro"
         '
-        'txtTransportista
-        '
-        Me.txtTransportista.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.txtTransportista.DefaultText = ""
-        Me.txtTransportista.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.txtTransportista.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.txtTransportista.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtTransportista.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.txtTransportista.Enabled = False
-        Me.txtTransportista.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTransportista.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.txtTransportista.ForeColor = System.Drawing.Color.Black
-        Me.txtTransportista.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txtTransportista.Location = New System.Drawing.Point(20, 73)
-        Me.txtTransportista.Name = "txtTransportista"
-        Me.txtTransportista.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.txtTransportista.PlaceholderText = ""
-        Me.txtTransportista.SelectedText = ""
-        Me.txtTransportista.Size = New System.Drawing.Size(347, 27)
-        Me.txtTransportista.TabIndex = 1
-        '
         'dgvClientesDevolucion
         '
-        DataGridViewCellStyle331.BackColor = System.Drawing.Color.White
-        Me.dgvClientesDevolucion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle331
-        DataGridViewCellStyle332.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle332.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        DataGridViewCellStyle332.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle332.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle332.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        DataGridViewCellStyle332.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle332.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvClientesDevolucion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle332
+        DataGridViewCellStyle73.BackColor = System.Drawing.Color.White
+        Me.dgvClientesDevolucion.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle73
+        DataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle74.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        DataGridViewCellStyle74.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle74.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle74.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        DataGridViewCellStyle74.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle74.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvClientesDevolucion.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle74
         Me.dgvClientesDevolucion.ColumnHeadersHeight = 4
         Me.dgvClientesDevolucion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        DataGridViewCellStyle333.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle333.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle333.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle333.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle333.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle333.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle333.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvClientesDevolucion.DefaultCellStyle = DataGridViewCellStyle333
+        DataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle75.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle75.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle75.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle75.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle75.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle75.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvClientesDevolucion.DefaultCellStyle = DataGridViewCellStyle75
         Me.dgvClientesDevolucion.GridColor = System.Drawing.Color.Silver
         Me.dgvClientesDevolucion.Location = New System.Drawing.Point(20, 158)
         Me.dgvClientesDevolucion.Name = "dgvClientesDevolucion"
         Me.dgvClientesDevolucion.RowHeadersVisible = False
-        Me.dgvClientesDevolucion.Size = New System.Drawing.Size(347, 127)
+        Me.dgvClientesDevolucion.Size = New System.Drawing.Size(347, 140)
         Me.dgvClientesDevolucion.TabIndex = 69
         Me.dgvClientesDevolucion.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvClientesDevolucion.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -2038,7 +2035,7 @@ Partial Class FrmPrincipal
         Me.txtObservacionDev.Depth = 0
         Me.txtObservacionDev.Font = New System.Drawing.Font("Roboto", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.txtObservacionDev.LeadingIcon = Nothing
-        Me.txtObservacionDev.Location = New System.Drawing.Point(400, 208)
+        Me.txtObservacionDev.Location = New System.Drawing.Point(400, 218)
         Me.txtObservacionDev.MaxLength = 50
         Me.txtObservacionDev.MouseState = MaterialSkin.MouseState.OUT
         Me.txtObservacionDev.Multiline = False
@@ -2052,7 +2049,7 @@ Partial Class FrmPrincipal
         '
         Me.Label36.AutoSize = True
         Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label36.Location = New System.Drawing.Point(399, 186)
+        Me.Label36.Location = New System.Drawing.Point(399, 196)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(103, 18)
         Me.Label36.TabIndex = 66
@@ -2171,7 +2168,7 @@ Partial Class FrmPrincipal
         Me.btnSigCliente.Depth = 0
         Me.btnSigCliente.HighEmphasis = True
         Me.btnSigCliente.Icon = CType(resources.GetObject("btnSigCliente.Icon"), System.Drawing.Image)
-        Me.btnSigCliente.Location = New System.Drawing.Point(751, 219)
+        Me.btnSigCliente.Location = New System.Drawing.Point(751, 229)
         Me.btnSigCliente.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
         Me.btnSigCliente.MouseState = MaterialSkin.MouseState.HOVER
         Me.btnSigCliente.Name = "btnSigCliente"
@@ -2185,26 +2182,26 @@ Partial Class FrmPrincipal
         '
         'dgvDevCliente
         '
-        DataGridViewCellStyle334.BackColor = System.Drawing.Color.White
-        Me.dgvDevCliente.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle334
-        DataGridViewCellStyle335.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle335.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        DataGridViewCellStyle335.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle335.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle335.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        DataGridViewCellStyle335.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle335.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvDevCliente.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle335
+        DataGridViewCellStyle76.BackColor = System.Drawing.Color.White
+        Me.dgvDevCliente.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle76
+        DataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle77.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        DataGridViewCellStyle77.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle77.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle77.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        DataGridViewCellStyle77.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle77.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvDevCliente.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle77
         Me.dgvDevCliente.ColumnHeadersHeight = 4
         Me.dgvDevCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        DataGridViewCellStyle336.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle336.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle336.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle336.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle336.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle336.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle336.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvDevCliente.DefaultCellStyle = DataGridViewCellStyle336
+        DataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle78.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle78.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle78.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle78.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle78.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle78.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvDevCliente.DefaultCellStyle = DataGridViewCellStyle78
         Me.dgvDevCliente.GridColor = System.Drawing.Color.Silver
         Me.dgvDevCliente.Location = New System.Drawing.Point(17, 304)
         Me.dgvDevCliente.Name = "dgvDevCliente"
@@ -2533,6 +2530,70 @@ Partial Class FrmPrincipal
         Me.Label41.TabIndex = 104
         Me.Label41.Text = "Transportista"
         '
+        'groupEstados
+        '
+        Me.groupEstados.Controls.Add(Me.rbtValeRep)
+        Me.groupEstados.Controls.Add(Me.rbtBuenoRep)
+        Me.groupEstados.Controls.Add(Me.rbtMaloRep)
+        Me.groupEstados.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
+        Me.groupEstados.Location = New System.Drawing.Point(542, 104)
+        Me.groupEstados.Name = "groupEstados"
+        Me.groupEstados.Size = New System.Drawing.Size(240, 63)
+        Me.groupEstados.TabIndex = 102
+        Me.groupEstados.TabStop = False
+        Me.groupEstados.Text = "Estado Pallet"
+        '
+        'rbtValeRep
+        '
+        Me.rbtValeRep.AutoSize = True
+        Me.rbtValeRep.Depth = 0
+        Me.rbtValeRep.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtValeRep.Location = New System.Drawing.Point(159, 21)
+        Me.rbtValeRep.Margin = New System.Windows.Forms.Padding(0)
+        Me.rbtValeRep.MouseLocation = New System.Drawing.Point(-1, -1)
+        Me.rbtValeRep.MouseState = MaterialSkin.MouseState.HOVER
+        Me.rbtValeRep.Name = "rbtValeRep"
+        Me.rbtValeRep.Ripple = True
+        Me.rbtValeRep.Size = New System.Drawing.Size(66, 37)
+        Me.rbtValeRep.TabIndex = 26
+        Me.rbtValeRep.TabStop = True
+        Me.rbtValeRep.Text = "Vale"
+        Me.rbtValeRep.UseVisualStyleBackColor = True
+        '
+        'rbtBuenoRep
+        '
+        Me.rbtBuenoRep.AutoSize = True
+        Me.rbtBuenoRep.Depth = 0
+        Me.rbtBuenoRep.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtBuenoRep.Location = New System.Drawing.Point(5, 21)
+        Me.rbtBuenoRep.Margin = New System.Windows.Forms.Padding(0)
+        Me.rbtBuenoRep.MouseLocation = New System.Drawing.Point(-1, -1)
+        Me.rbtBuenoRep.MouseState = MaterialSkin.MouseState.HOVER
+        Me.rbtBuenoRep.Name = "rbtBuenoRep"
+        Me.rbtBuenoRep.Ripple = True
+        Me.rbtBuenoRep.Size = New System.Drawing.Size(80, 37)
+        Me.rbtBuenoRep.TabIndex = 24
+        Me.rbtBuenoRep.TabStop = True
+        Me.rbtBuenoRep.Text = "Bueno"
+        Me.rbtBuenoRep.UseVisualStyleBackColor = True
+        '
+        'rbtMaloRep
+        '
+        Me.rbtMaloRep.AutoSize = True
+        Me.rbtMaloRep.Depth = 0
+        Me.rbtMaloRep.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbtMaloRep.Location = New System.Drawing.Point(82, 21)
+        Me.rbtMaloRep.Margin = New System.Windows.Forms.Padding(0)
+        Me.rbtMaloRep.MouseLocation = New System.Drawing.Point(-1, -1)
+        Me.rbtMaloRep.MouseState = MaterialSkin.MouseState.HOVER
+        Me.rbtMaloRep.Name = "rbtMaloRep"
+        Me.rbtMaloRep.Ripple = True
+        Me.rbtMaloRep.Size = New System.Drawing.Size(71, 37)
+        Me.rbtMaloRep.TabIndex = 25
+        Me.rbtMaloRep.TabStop = True
+        Me.rbtMaloRep.Text = "Malo"
+        Me.rbtMaloRep.UseVisualStyleBackColor = True
+        '
         'cboClienteReporte
         '
         Me.cboClienteReporte.BackColor = System.Drawing.Color.Transparent
@@ -2636,26 +2697,26 @@ Partial Class FrmPrincipal
         '
         'dgvReporte
         '
-        DataGridViewCellStyle337.BackColor = System.Drawing.Color.White
-        Me.dgvReporte.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle337
-        DataGridViewCellStyle338.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle338.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        DataGridViewCellStyle338.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle338.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle338.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        DataGridViewCellStyle338.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle338.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvReporte.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle338
+        DataGridViewCellStyle85.BackColor = System.Drawing.Color.White
+        Me.dgvReporte.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle85
+        DataGridViewCellStyle86.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle86.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        DataGridViewCellStyle86.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle86.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle86.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        DataGridViewCellStyle86.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle86.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvReporte.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle86
         Me.dgvReporte.ColumnHeadersHeight = 4
         Me.dgvReporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        DataGridViewCellStyle339.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle339.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle339.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle339.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle339.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle339.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle339.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvReporte.DefaultCellStyle = DataGridViewCellStyle339
+        DataGridViewCellStyle87.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle87.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle87.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle87.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle87.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle87.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle87.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvReporte.DefaultCellStyle = DataGridViewCellStyle87
         Me.dgvReporte.GridColor = System.Drawing.Color.Silver
         Me.dgvReporte.Location = New System.Drawing.Point(9, 255)
         Me.dgvReporte.Name = "dgvReporte"
@@ -2750,7 +2811,7 @@ Partial Class FrmPrincipal
         Me.btnBuscarCliInforme.FillColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.btnBuscarCliInforme.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscarCliInforme.ForeColor = System.Drawing.Color.White
-        Me.btnBuscarCliInforme.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.btnBuscarCliInforme.HoverState.FillColor = System.Drawing.Color.Silver
         Me.btnBuscarCliInforme.Image = CType(resources.GetObject("btnBuscarCliInforme.Image"), System.Drawing.Image)
         Me.btnBuscarCliInforme.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnBuscarCliInforme.Location = New System.Drawing.Point(211, 118)
@@ -2867,7 +2928,7 @@ Partial Class FrmPrincipal
         Me.btnTraInforme.FillColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.btnTraInforme.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnTraInforme.ForeColor = System.Drawing.Color.White
-        Me.btnTraInforme.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.btnTraInforme.HoverState.FillColor = System.Drawing.Color.Silver
         Me.btnTraInforme.Image = CType(resources.GetObject("btnTraInforme.Image"), System.Drawing.Image)
         Me.btnTraInforme.ImageSize = New System.Drawing.Size(25, 25)
         Me.btnTraInforme.Location = New System.Drawing.Point(513, 117)
@@ -2968,31 +3029,31 @@ Partial Class FrmPrincipal
         '
         'dgvInformeSaldos
         '
-        DataGridViewCellStyle340.BackColor = System.Drawing.Color.White
-        Me.dgvInformeSaldos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle340
-        DataGridViewCellStyle341.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle341.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        DataGridViewCellStyle341.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle341.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle341.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
-        DataGridViewCellStyle341.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle341.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvInformeSaldos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle341
+        DataGridViewCellStyle88.BackColor = System.Drawing.Color.White
+        Me.dgvInformeSaldos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle88
+        DataGridViewCellStyle89.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle89.BackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        DataGridViewCellStyle89.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle89.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle89.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
+        DataGridViewCellStyle89.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle89.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvInformeSaldos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle89
         Me.dgvInformeSaldos.ColumnHeadersHeight = 4
         Me.dgvInformeSaldos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        DataGridViewCellStyle342.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle342.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle342.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle342.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle342.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle342.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle342.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvInformeSaldos.DefaultCellStyle = DataGridViewCellStyle342
+        DataGridViewCellStyle90.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle90.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle90.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle90.ForeColor = System.Drawing.Color.FromArgb(CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle90.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle90.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle90.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvInformeSaldos.DefaultCellStyle = DataGridViewCellStyle90
         Me.dgvInformeSaldos.GridColor = System.Drawing.Color.Silver
-        Me.dgvInformeSaldos.Location = New System.Drawing.Point(8, 246)
+        Me.dgvInformeSaldos.Location = New System.Drawing.Point(17, 246)
         Me.dgvInformeSaldos.Name = "dgvInformeSaldos"
         Me.dgvInformeSaldos.RowHeadersVisible = False
-        Me.dgvInformeSaldos.Size = New System.Drawing.Size(983, 261)
+        Me.dgvInformeSaldos.Size = New System.Drawing.Size(974, 261)
         Me.dgvInformeSaldos.TabIndex = 94
         Me.dgvInformeSaldos.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgvInformeSaldos.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -3032,7 +3093,7 @@ Partial Class FrmPrincipal
         Me.Salir.Location = New System.Drawing.Point(4, 37)
         Me.Salir.Name = "Salir"
         Me.Salir.Padding = New System.Windows.Forms.Padding(3)
-        Me.Salir.Size = New System.Drawing.Size(1044, 553)
+        Me.Salir.Size = New System.Drawing.Size(1039, 553)
         Me.Salir.TabIndex = 6
         Me.Salir.Text = "Salir"
         Me.Salir.UseVisualStyleBackColor = True
@@ -3041,69 +3102,43 @@ Partial Class FrmPrincipal
         '
         Me.Guna2Elipse3.TargetControl = Me.groupAsignacion
         '
-        'rbtMaloRep
+        'Guna2PictureBox2
         '
-        Me.rbtMaloRep.AutoSize = True
-        Me.rbtMaloRep.Depth = 0
-        Me.rbtMaloRep.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbtMaloRep.Location = New System.Drawing.Point(82, 21)
-        Me.rbtMaloRep.Margin = New System.Windows.Forms.Padding(0)
-        Me.rbtMaloRep.MouseLocation = New System.Drawing.Point(-1, -1)
-        Me.rbtMaloRep.MouseState = MaterialSkin.MouseState.HOVER
-        Me.rbtMaloRep.Name = "rbtMaloRep"
-        Me.rbtMaloRep.Ripple = True
-        Me.rbtMaloRep.Size = New System.Drawing.Size(71, 37)
-        Me.rbtMaloRep.TabIndex = 25
-        Me.rbtMaloRep.TabStop = True
-        Me.rbtMaloRep.Text = "Malo"
-        Me.rbtMaloRep.UseVisualStyleBackColor = True
+        Me.Guna2PictureBox2.Image = CType(resources.GetObject("Guna2PictureBox2.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox2.ImageRotate = 0!
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(8, 342)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(26, 26)
+        Me.Guna2PictureBox2.TabIndex = 81
+        Me.Guna2PictureBox2.TabStop = False
         '
-        'rbtBuenoRep
+        'Label16
         '
-        Me.rbtBuenoRep.AutoSize = True
-        Me.rbtBuenoRep.Depth = 0
-        Me.rbtBuenoRep.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbtBuenoRep.Location = New System.Drawing.Point(5, 21)
-        Me.rbtBuenoRep.Margin = New System.Windows.Forms.Padding(0)
-        Me.rbtBuenoRep.MouseLocation = New System.Drawing.Point(-1, -1)
-        Me.rbtBuenoRep.MouseState = MaterialSkin.MouseState.HOVER
-        Me.rbtBuenoRep.Name = "rbtBuenoRep"
-        Me.rbtBuenoRep.Ripple = True
-        Me.rbtBuenoRep.Size = New System.Drawing.Size(80, 37)
-        Me.rbtBuenoRep.TabIndex = 24
-        Me.rbtBuenoRep.TabStop = True
-        Me.rbtBuenoRep.Text = "Bueno"
-        Me.rbtBuenoRep.UseVisualStyleBackColor = True
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label16.Location = New System.Drawing.Point(31, 353)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(306, 15)
+        Me.Label16.TabIndex = 80
+        Me.Label16.Text = "Doble Click en tabla para modificar un registro"
         '
-        'rbtValeRep
+        'cboTransportistaDev
         '
-        Me.rbtValeRep.AutoSize = True
-        Me.rbtValeRep.Depth = 0
-        Me.rbtValeRep.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rbtValeRep.Location = New System.Drawing.Point(159, 21)
-        Me.rbtValeRep.Margin = New System.Windows.Forms.Padding(0)
-        Me.rbtValeRep.MouseLocation = New System.Drawing.Point(-1, -1)
-        Me.rbtValeRep.MouseState = MaterialSkin.MouseState.HOVER
-        Me.rbtValeRep.Name = "rbtValeRep"
-        Me.rbtValeRep.Ripple = True
-        Me.rbtValeRep.Size = New System.Drawing.Size(66, 37)
-        Me.rbtValeRep.TabIndex = 26
-        Me.rbtValeRep.TabStop = True
-        Me.rbtValeRep.Text = "Vale"
-        Me.rbtValeRep.UseVisualStyleBackColor = True
-        '
-        'groupEstados
-        '
-        Me.groupEstados.Controls.Add(Me.rbtValeRep)
-        Me.groupEstados.Controls.Add(Me.rbtBuenoRep)
-        Me.groupEstados.Controls.Add(Me.rbtMaloRep)
-        Me.groupEstados.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.groupEstados.Location = New System.Drawing.Point(542, 104)
-        Me.groupEstados.Name = "groupEstados"
-        Me.groupEstados.Size = New System.Drawing.Size(240, 63)
-        Me.groupEstados.TabIndex = 102
-        Me.groupEstados.TabStop = False
-        Me.groupEstados.Text = "Estado Pallet"
+        Me.cboTransportistaDev.BackColor = System.Drawing.Color.Transparent
+        Me.cboTransportistaDev.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.cboTransportistaDev.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboTransportistaDev.Enabled = False
+        Me.cboTransportistaDev.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboTransportistaDev.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.cboTransportistaDev.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cboTransportistaDev.ForeColor = System.Drawing.Color.Black
+        Me.cboTransportistaDev.ItemHeight = 16
+        Me.cboTransportistaDev.Location = New System.Drawing.Point(17, 73)
+        Me.cboTransportistaDev.MaxDropDownItems = 4
+        Me.cboTransportistaDev.Name = "cboTransportistaDev"
+        Me.cboTransportistaDev.Size = New System.Drawing.Size(349, 22)
+        Me.cboTransportistaDev.TabIndex = 80
         '
         'FrmPrincipal
         '
@@ -3157,11 +3192,14 @@ Partial Class FrmPrincipal
         Me.MaterialCard10.ResumeLayout(False)
         Me.MaterialCard11.ResumeLayout(False)
         Me.MaterialCard11.PerformLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvClientesDevolucion, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvDevCliente, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ReporteMovimientos.ResumeLayout(False)
         Me.MaterialCard12.ResumeLayout(False)
         Me.MaterialCard12.PerformLayout()
+        Me.groupEstados.ResumeLayout(False)
+        Me.groupEstados.PerformLayout()
         CType(Me.dgvReporte, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.InformeSaldos.ResumeLayout(False)
@@ -3169,8 +3207,7 @@ Partial Class FrmPrincipal
         Me.MaterialCard13.PerformLayout()
         CType(Me.dgvInformeSaldos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.groupEstados.ResumeLayout(False)
-        Me.groupEstados.PerformLayout()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -3342,7 +3379,6 @@ Partial Class FrmPrincipal
     Friend WithEvents txtFechaCargaEgreso As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents Label53 As Label
     Friend WithEvents dgvClientesDevolucion As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents txtTransportista As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label46 As Label
     Friend WithEvents txtCantBuenEstado As MaterialSkin.Controls.MaterialTextBox
     Friend WithEvents txtCantMalEstado As MaterialSkin.Controls.MaterialTextBox
@@ -3353,4 +3389,8 @@ Partial Class FrmPrincipal
     Friend WithEvents rbtValeRep As MaterialSkin.Controls.MaterialRadioButton
     Friend WithEvents rbtBuenoRep As MaterialSkin.Controls.MaterialRadioButton
     Friend WithEvents rbtMaloRep As MaterialSkin.Controls.MaterialRadioButton
+    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents cboTransportistaDev As Guna.UI2.WinForms.Guna2ComboBox
 End Class

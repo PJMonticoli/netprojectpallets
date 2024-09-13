@@ -52,7 +52,7 @@ Partial Class FrmBuscarTransportista
         Me.MaterialCard1.MouseState = MaterialSkin.MouseState.HOVER
         Me.MaterialCard1.Name = "MaterialCard1"
         Me.MaterialCard1.Padding = New System.Windows.Forms.Padding(14)
-        Me.MaterialCard1.Size = New System.Drawing.Size(500, 363)
+        Me.MaterialCard1.Size = New System.Drawing.Size(516, 402)
         Me.MaterialCard1.TabIndex = 44
         '
         'dgvTransportistas
@@ -159,7 +159,7 @@ Partial Class FrmBuscarTransportista
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(506, 430)
+        Me.ClientSize = New System.Drawing.Size(522, 469)
         Me.Controls.Add(Me.MaterialCard1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False

@@ -473,24 +473,25 @@ Public Class ControllerPallets
     End Function
 
 
-    Public Function ObtenerTransportista(nroParteSalida As String) As String
-        Dim sql As String = "SELECT CONCAT(ps.CodFletero, ' - ', f.RazonSocial) AS RazonSocial
-                             FROM Almacen.dbo.ParteSalida ps 
-                             INNER JOIN Almacen.dbo.oenOEntrega oe ON ps.nroParteSalida = oe.ParteSalida
-                             INNER JOIN Almacen.dbo.oenOCarga oc ON oe.nroOEntrega = oc.NroOEntrega
-                             INNER JOIN Ventas.dbo.DetalleOCarga doc ON doc.NroOCarga = oc.OCarga
-                             INNER JOIN Ventas.dbo.Pedidos p ON p.NroPedido = doc.NroPedido
-                             INNER JOIN CtasCtesSQL.dbo.Clientes c ON c.CodCliente = p.NroCliente
-						     INNER JOIN CtasCtesSQL.dbo.Fleteros f ON f.CodFletero = ps.CodFletero  
+    Public Function ObtenerTransportista(nroParteSalida As String) As Integer
+        Dim sql As String = "SELECT ps.CodFletero
+                         FROM Almacen.dbo.ParteSalida ps 
+                         INNER JOIN Almacen.dbo.oenOEntrega oe ON ps.nroParteSalida = oe.ParteSalida
+                         INNER JOIN Almacen.dbo.oenOCarga oc ON oe.nroOEntrega = oc.NroOEntrega
+                         INNER JOIN Ventas.dbo.DetalleOCarga doc ON doc.NroOCarga = oc.OCarga
+                         INNER JOIN Ventas.dbo.Pedidos p ON p.NroPedido = doc.NroPedido
+                         INNER JOIN CtasCtesSQL.dbo.Clientes c ON c.CodCliente = p.NroCliente
+                         INNER JOIN CtasCtesSQL.dbo.Fleteros f ON f.CodFletero = ps.CodFletero  
                          WHERE ps.NroParteSalida = @NroParteSalida"
         Dim parametros As SqlParameter() = {New SqlParameter("@NroParteSalida", SqlDbType.Int) With {.Value = nroParteSalida}}
         Dim dt As DataTable = ServidorSQL.GetTablaParam(sql, parametros)
         If dt.Rows.Count > 0 Then
-            Return dt.Rows(0)("RazonSocial").ToString()
+            Return Convert.ToInt32(dt.Rows(0)("CodFletero"))
         Else
-            Return String.Empty
+            Return 0
         End If
     End Function
+
 
 
     Public Function ObtenerClientes(nroParteSalida As String) As DataTable

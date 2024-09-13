@@ -25,6 +25,8 @@ Public Class ComboBoxDataLoaderFactory
                 Return New Transportista()
             Case "cboTransportistaInforme"
                 Return New Transportista()
+            Case "cboTransportistaDev"
+                Return New Transportista()
             Case "cboTipoPallet"
                 Return New TipoPallet()
             Case "cboTipoPalletReporte"

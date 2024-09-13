@@ -56,7 +56,6 @@ Public Class FrmPrincipal
 
     Private Sub ColoresFrmPrincipal()
         Dim SkinManager As MaterialSkinManager = MaterialSkinManager.Instance
-        'SkinManager.AddFormToManage(Me)
         SkinManager.Theme = MaterialSkinManager.Themes.LIGHT
         SkinManager.ColorScheme = New ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Primary.BlueGrey500, TextShade.WHITE)
     End Sub
@@ -120,6 +119,8 @@ Public Class FrmPrincipal
         cboClienteDevolucion.SelectedIndex = -1
         ComboBoxFunctions.CargarComboGeneral(cboTransportista, 2)
         cboTransportista.SelectedIndex = -1
+        ComboBoxFunctions.CargarComboGeneral(cboTransportistaDev, 2)
+        cboTransportistaDev.SelectedIndex = -1
 
         'REPORTES
         ComboBoxFunctions.CargarComboGeneral(cboClienteReporte, 2)
@@ -396,13 +397,20 @@ Public Class FrmPrincipal
 
     Private Sub ProcesarParteSalidaDev(nroParteSalida As String)
         If Not String.IsNullOrEmpty(nroParteSalida) Then
-            Dim transportista As String = controller.ObtenerTransportista(nroParteSalida)
+            Dim transportistaId As Integer = controller.ObtenerTransportista(nroParteSalida)
             Dim clientes As DataTable = controller.ObtenerClientes(nroParteSalida)
             dgvDevClienteDevLoader.CargarClientesEnGrilla(clientes)
-            txtTransportista.Text = transportista
+
+            If transportistaId <> 0 Then
+                cboTransportistaDev.SelectedValue = transportistaId
+            Else
+                MsgBox("Transportista no encontrado en la lista.", MsgBoxStyle.Information, "Aviso")
+            End If
+
             cboClienteDevolucion.Focus()
         End If
     End Sub
+
 
     Private Sub txtNroParteSalidaDev_KeyDown(sender As Object, e As KeyEventArgs) Handles txtNroParteSalidaDev.KeyDown
         If e.KeyCode = Keys.Enter Then
@@ -415,95 +423,95 @@ Public Class FrmPrincipal
 
 
 
+
     Private Sub btnSigCliente_Click(sender As Object, e As EventArgs) Handles btnSigCliente.Click
-        Dim codFleteroStr As String = txtTransportista.Text
-        Dim regex As New Regex("\d+")
-        Dim match As Match = regex.Match(codFleteroStr)
-        Dim codFleteroNum As Short
 
-        If match.Success Then
-            If Short.TryParse(match.Value, codFleteroNum) Then
-                Dim cantidad As Integer = 0
-                Dim cantidadMalEstado As Integer = 0
-                Dim cantidadVale As Integer = 0
-                If Not String.IsNullOrEmpty(txtCantBuenEstado.Text) AndAlso Not Integer.TryParse(txtCantBuenEstado.Text, cantidad) Then
-                    MessageBox.Show("Cantidad en buen estado no es válida. Ingrese valores numéricos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                    Return
-                End If
+        Dim codFleteroNum As Integer
 
-                If Not String.IsNullOrEmpty(txtCantMalEstado.Text) AndAlso Not Integer.TryParse(txtCantMalEstado.Text, cantidadMalEstado) Then
-                    MessageBox.Show("Cantidad en mal estado no es válida. Ingrese valores numéricos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                    Return
-                End If
+        If cboTransportistaDev.SelectedValue Is Nothing OrElse Not Integer.TryParse(cboTransportistaDev.SelectedValue.ToString(), codFleteroNum) Then
+            MessageBox.Show("Debe seleccionar un transportista válido.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
 
-                If Not String.IsNullOrEmpty(txtCantVale.Text) AndAlso Not Integer.TryParse(txtCantVale.Text, cantidadVale) Then
-                    MessageBox.Show("Cantidad vale no es válida. Ingrese valores numéricos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                    Return
-                End If
+        Dim cantidad As Integer = 0
+        Dim cantidadMalEstado As Integer = 0
+        Dim cantidadVale As Integer = 0
 
-                Dim razonSocialCliente As String = cboClienteDevolucion.Text
-                Dim transportista As String = txtTransportista.Text
-                Dim Observacion As String = txtObservacionDev.Text
+        ' Validar cantidad en buen estado
+        If Not String.IsNullOrEmpty(txtCantBuenEstado.Text) AndAlso Not Integer.TryParse(txtCantBuenEstado.Text, cantidad) Then
+            MessageBox.Show("Cantidad en buen estado no es válida. Ingrese valores numéricos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
 
-                ' Verificar si se ha seleccionado un cliente
-                If cboClienteDevolucion.SelectedValue Is Nothing OrElse String.IsNullOrEmpty(cboClienteDevolucion.SelectedValue.ToString()) Then
-                    MessageBox.Show("Debe seleccionar un cliente.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                    Return
-                End If
+        ' Validar cantidad en mal estado
+        If Not String.IsNullOrEmpty(txtCantMalEstado.Text) AndAlso Not Integer.TryParse(txtCantMalEstado.Text, cantidadMalEstado) Then
+            MessageBox.Show("Cantidad en mal estado no es válida. Ingrese valores numéricos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
 
-                ' Crear una instancia del modelo de datos
-                Dim pallet As New PalletModel() With {
-                .Fecha = dtpFecha.Value,
-                .FechaCarga = DateTime.Now,
-                .CodCliente = If(Integer.TryParse(cboClienteDevolucion.SelectedValue.ToString(), Nothing), CInt(cboClienteDevolucion.SelectedValue), 0),
-                .CodFletero = codFleteroNum,
-                .Cantidad = cantidad,
-                .CantidadMalEstado = cantidadMalEstado,
-                .CantidadVale = cantidadVale,
-                .Observacion = Observacion
-            }
+        ' Validar cantidad vale
+        If Not String.IsNullOrEmpty(txtCantVale.Text) AndAlso Not Integer.TryParse(txtCantVale.Text, cantidadVale) Then
+            MessageBox.Show("Cantidad vale no es válida. Ingrese valores numéricos.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
 
-                Dim validador As New DevPalletValidador()
-                Dim resultado As ValidationResult = validador.Validate(pallet)
+        Dim razonSocialCliente As String = cboClienteDevolucion.Text
+        Dim Observacion As String = txtObservacionDev.Text
 
-                If resultado.IsValid Then
-                    Dim row As String() = {
-                    pallet.Fecha.ToString("dd-MM-yyyy"),
-                    pallet.FechaCarga.ToString("dd-MM-yyyy HH:mm"),
-                    transportista,
-                    razonSocialCliente,
-                    pallet.Cantidad.ToString(),
-                    pallet.CantidadMalEstado.ToString(),
-                    pallet.CantidadVale.ToString(),
-                    If(String.IsNullOrEmpty(Observacion), "Sin observación", Observacion)
-                }
+        ' Verificar si se ha seleccionado un cliente
+        If cboClienteDevolucion.SelectedValue Is Nothing OrElse String.IsNullOrEmpty(cboClienteDevolucion.SelectedValue.ToString()) Then
+            MessageBox.Show("Debe seleccionar un cliente.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
 
-                    ' Verificar si estamos editando una fila existente
-                    If selectedRowIndex >= 0 AndAlso selectedRowIndex < dgvDevCliente.Rows.Count Then
-                        ' Actualizar la fila existente
-                        For i As Integer = 0 To row.Length - 1
-                            dgvDevCliente.Rows(selectedRowIndex).Cells(i).Value = row(i)
-                        Next
-                        selectedRowIndex = -1
-                    Else
-                        ' Agregar una nueva fila si no estamos editando
-                        dgvDevCliente.Rows.Add(row)
-                    End If
+        ' Crear una instancia del modelo de datos
+        Dim pallet As New PalletModel() With {
+        .Fecha = dtpFecha.Value,
+        .FechaCarga = DateTime.Now,
+        .CodCliente = If(Integer.TryParse(cboClienteDevolucion.SelectedValue.ToString(), Nothing), CInt(cboClienteDevolucion.SelectedValue), 0),
+        .CodFletero = codFleteroNum,
+        .Cantidad = cantidad,
+        .CantidadMalEstado = cantidadMalEstado,
+        .CantidadVale = cantidadVale,
+        .Observacion = Observacion
+    }
 
-                    limpiarControlesCargaDev()
-                    cboClienteDevolucion.SelectedIndex = -1
-                    cboClienteDevolucion.Focus()
-                Else
-                    Dim errores As String = String.Join(Environment.NewLine, resultado.Errors.Select(Function(validationError) validationError.ErrorMessage))
-                    MessageBox.Show(errores, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                End If
+        Dim validador As New DevPalletValidador()
+        Dim resultado As ValidationResult = validador.Validate(pallet)
+
+        If resultado.IsValid Then
+            Dim row As String() = {
+            pallet.Fecha.ToString("dd-MM-yyyy"),
+            pallet.FechaCarga.ToString("dd-MM-yyyy HH:mm"),
+            cboTransportistaDev.Text,
+            razonSocialCliente,
+            pallet.Cantidad.ToString(),
+            pallet.CantidadMalEstado.ToString(),
+            pallet.CantidadVale.ToString(),
+            If(String.IsNullOrEmpty(Observacion), "Sin observación", Observacion)
+        }
+
+            ' Verificar si estamos editando una fila existente
+            If selectedRowIndex >= 0 AndAlso selectedRowIndex < dgvDevCliente.Rows.Count Then
+                ' Actualizar la fila existente
+                For i As Integer = 0 To row.Length - 1
+                    dgvDevCliente.Rows(selectedRowIndex).Cells(i).Value = row(i)
+                Next
+                selectedRowIndex = -1
             Else
-                MessageBox.Show("El código del fletero no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                ' Agregar una nueva fila si no estamos editando
+                dgvDevCliente.Rows.Add(row)
             End If
+
+            limpiarControlesCargaDev()
+            cboClienteDevolucion.SelectedIndex = -1
+            cboClienteDevolucion.Focus()
         Else
-            MessageBox.Show("No se encontraron dígitos en el código del fletero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Dim errores As String = String.Join(Environment.NewLine, resultado.Errors.Select(Function(validationError) validationError.ErrorMessage))
+            MessageBox.Show(errores, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
+
 
 
 
@@ -548,16 +556,13 @@ Public Class FrmPrincipal
         If result = DialogResult.No Then
             Exit Sub
         End If
-        Dim transportistaTexto As String = txtTransportista.Text
+
+        ' Obtener el código del fletero desde el ComboBox
         Dim codFletero As Integer
 
-        ' Usa una expresión regular para extraer el número al inicio de la cadena
-        Dim regex As New Regex("^\d+")
-        Dim match As Match = regex.Match(transportistaTexto)
-        If match.Success Then
-            Integer.TryParse(match.Value, codFletero)
-        Else
-            MessageBox.Show("El código de transportista no es válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        ' Verificar si se ha seleccionado un valor en el ComboBox
+        If cboTransportistaDev.SelectedValue Is Nothing OrElse Not Integer.TryParse(cboTransportistaDev.SelectedValue.ToString(), codFletero) Then
+            MessageBox.Show("Debe seleccionar un transportista válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End If
 
@@ -568,8 +573,10 @@ Public Class FrmPrincipal
                 Dim fechaSeleccionada As DateTime = dtpFechaDev.Value
                 Dim clienteTexto As String = row.Cells("Cliente").Value.ToString()
                 Dim clienteCod As Integer
-                ' Extraer el código del cliente del texto
-                Dim clienteMatch As Match = regex.Match(clienteTexto)
+
+                ' Usa una expresión regular para extraer el código del cliente del texto
+                Dim clienteRegex As New Regex("^\d+")
+                Dim clienteMatch As Match = clienteRegex.Match(clienteTexto)
                 If clienteMatch.Success Then
                     Integer.TryParse(clienteMatch.Value, clienteCod)
                 Else
@@ -577,6 +584,8 @@ Public Class FrmPrincipal
                     exitoTotal = False
                     Exit For
                 End If
+
+                ' Obtener el transportista desde la fila del DataGridView
                 Dim transportista As String = row.Cells("Transportista").Value.ToString()
                 Dim estadoBueno As Integer = If(String.IsNullOrEmpty(row.Cells("CantBuenEstado").Value.ToString()), 0, CInt(row.Cells("CantBuenEstado").Value))
                 Dim estadoMalo As Integer = If(String.IsNullOrEmpty(row.Cells("CantMalEstado").Value.ToString()), 0, CInt(row.Cells("CantMalEstado").Value))
@@ -591,6 +600,7 @@ Public Class FrmPrincipal
                 End If
             End If
         Next
+
         ' Mostrar el mensaje de éxito solo si todas las filas fueron procesadas exitosamente
         If exitoTotal Then
             MsgBox("Devolución registrada con éxito.", MsgBoxStyle.Information, "Éxito")
@@ -602,6 +612,7 @@ Public Class FrmPrincipal
 
         limpiarControlesDevolucion()
     End Sub
+
 
 
     Private Sub dgvDevCliente_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDevCliente.CellDoubleClick
@@ -693,7 +704,7 @@ Public Class FrmPrincipal
 
     'LIMPIEZA COMPLETA AL REGISTRAR DEV CLIENTE
     Private Sub limpiarControlesDevolucion()
-        ModuloControles.LimpiarControlesDevCliente(New Control() {txtCantBuenEstado, txtCantMalEstado, txtCantVale, cboClienteDevolucion, dgvDevCliente, dgvClientesDevolucion, txtNroParteSalidaDev, txtTransportista, txtObservacionDev})
+        ModuloControles.LimpiarControlesDevCliente(New Control() {txtCantBuenEstado, txtCantMalEstado, txtCantVale, cboClienteDevolucion, dgvDevCliente, dgvClientesDevolucion, cboTransportistaDev, cboTransportistaDev, txtObservacionDev})
     End Sub
 
 
@@ -703,6 +714,7 @@ Public Class FrmPrincipal
             LimpiarCampos()
             cboCliente.SelectedIndex = -1
             cboTransportista.SelectedIndex = -1
+            cboTipoPallet.SelectedIndex = 2
         End If
     End Sub
 
