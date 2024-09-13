@@ -407,7 +407,7 @@ Public Class FrmPrincipal
                 MsgBox("Transportista no encontrado en la lista.", MsgBoxStyle.Information, "Aviso")
             End If
 
-            cboClienteDevolucion.Focus()
+            dgvClientesDevolucion.Focus()
         End If
     End Sub
 
@@ -491,7 +491,7 @@ Public Class FrmPrincipal
             If(String.IsNullOrEmpty(Observacion), "Sin observación", Observacion)
         }
 
-            ' Verificar si estamos editando una fila existente
+
             If selectedRowIndex >= 0 AndAlso selectedRowIndex < dgvDevCliente.Rows.Count Then
                 ' Actualizar la fila existente
                 For i As Integer = 0 To row.Length - 1
@@ -499,18 +499,34 @@ Public Class FrmPrincipal
                 Next
                 selectedRowIndex = -1
             Else
-                ' Agregar una nueva fila si no estamos editando
                 dgvDevCliente.Rows.Add(row)
             End If
 
+
+            Dim rowsToRemove As New List(Of DataGridViewRow)()
+            For Each rowc As DataGridViewRow In dgvClientesDevolucion.SelectedRows
+
+                If Not rowc.IsNewRow Then
+                    rowsToRemove.Add(rowc)
+                End If
+            Next
+
+            For Each rowc As DataGridViewRow In rowsToRemove
+                dgvClientesDevolucion.Rows.Remove(rowc)
+            Next
+
             limpiarControlesCargaDev()
             cboClienteDevolucion.SelectedIndex = -1
-            cboClienteDevolucion.Focus()
+            dgvClientesDevolucion.Focus()
         Else
             Dim errores As String = String.Join(Environment.NewLine, resultado.Errors.Select(Function(validationError) validationError.ErrorMessage))
             MessageBox.Show(errores, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
+
+
+
+
 
 
 
@@ -673,7 +689,7 @@ Public Class FrmPrincipal
     Private Sub txtObservacionDev_KeyDown(sender As Object, e As KeyEventArgs) Handles txtObservacionDev.KeyDown
         If e.KeyCode = Keys.Enter Then
             btnSigCliente_Click(sender, e)
-            cboClienteDevolucion.Focus()
+            dgvClientesDevolucion.Focus()
             txtObservacionDev.Clear()
             e.Handled = True
             e.SuppressKeyPress = True
@@ -704,7 +720,7 @@ Public Class FrmPrincipal
 
     'LIMPIEZA COMPLETA AL REGISTRAR DEV CLIENTE
     Private Sub limpiarControlesDevolucion()
-        ModuloControles.LimpiarControlesDevCliente(New Control() {txtCantBuenEstado, txtCantMalEstado, txtCantVale, cboClienteDevolucion, dgvDevCliente, dgvClientesDevolucion, cboTransportistaDev, cboTransportistaDev, txtObservacionDev})
+        ModuloControles.LimpiarControlesDevCliente(New Control() {txtNroParteSalidaDev, txtCantBuenEstado, txtCantMalEstado, txtCantVale, cboClienteDevolucion, dgvDevCliente, dgvClientesDevolucion, cboTransportistaDev, cboTransportistaDev, txtObservacionDev})
     End Sub
 
 
@@ -941,13 +957,31 @@ Public Class FrmPrincipal
         If e.KeyCode = Keys.Enter Then
             e.Handled = True
             e.SuppressKeyPress = True
+
             ' Verificar si hay una fila seleccionada
-            If dgvClientesDevolucion.CurrentRow IsNot Nothing Then
-                Dim selectedRow As DataGridViewRow = dgvClientesDevolucion.CurrentRow
+            If dgvClientesDevolucion.CurrentRow IsNot Nothing AndAlso dgvClientesDevolucion.CurrentRow.Cells("Cliente").Value IsNot Nothing Then
+                Try
+                    Dim selectedRow As DataGridViewRow = dgvClientesDevolucion.CurrentRow
+                    Dim cliente As String = selectedRow.Cells("Cliente").Value.ToString()
+                    Dim codCliente As String = cliente.Split("-"c)(0).Trim()
+                    cboClienteDevolucion.SelectedValue = codCliente
+                Catch ex As Exception
+                    MessageBox.Show("Error al procesar la fila seleccionada: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End Try
+            End If
+        End If
+    End Sub
+
+    Private Sub dgvClientesDevolucion_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvClientesDevolucion.CellDoubleClick
+        If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 AndAlso dgvClientesDevolucion.Rows(e.RowIndex).Cells("Cliente").Value IsNot Nothing Then
+            Try
+                Dim selectedRow As DataGridViewRow = dgvClientesDevolucion.Rows(e.RowIndex)
                 Dim cliente As String = selectedRow.Cells("Cliente").Value.ToString()
                 Dim codCliente As String = cliente.Split("-"c)(0).Trim()
                 cboClienteDevolucion.SelectedValue = codCliente
-            End If
+            Catch ex As Exception
+                MessageBox.Show("Error al procesar la celda seleccionada: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
         End If
     End Sub
 
