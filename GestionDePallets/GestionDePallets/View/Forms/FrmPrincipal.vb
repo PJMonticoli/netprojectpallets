@@ -779,52 +779,54 @@ Public Class FrmPrincipal
 
 
 #Region "TAB CONTROL"
-    Private Sub tabControlSalir(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
-        If (tabControl.SelectedTab.Text = "Salir") Then
-            Application.Exit()
-        End If
-    End Sub
+
     Private Sub tabControlInicio(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
-        If (tabControl.SelectedTab.Text = "Inicio") Then
+        If (tabControl.SelectedIndex = 0) Then
             Me.BeginInvoke(Sub() dtpFecha.Focus())
             Me.Text = "Gestión de Pallets"
         End If
     End Sub
 
     Private Sub tabControlMovimiento(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
-        If (tabControl.SelectedTab.Text = "Pallets") Then
+        If (tabControl.SelectedIndex = 1) Then
             Me.BeginInvoke(Sub() dtpFecha.Focus())
             Me.Text = "Carga de Movimientos Pallets"
         End If
     End Sub
 
     Private Sub tabControlAsignacion(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
-        If (tabControl.SelectedTab.TabIndex = 7) Then
+        If (tabControl.SelectedIndex = 2) Then
             Me.BeginInvoke(Sub() txtNroParteSalida.Focus())
-            Me.Text = "Pallets por Cliente"
+            Me.Text = "Egreso Pallets por Cliente"
         End If
     End Sub
 
     Private Sub tabControlDevCliente(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
-        If (tabControl.SelectedTab.TabIndex = 8) Then
+        If (tabControl.SelectedIndex = 3) Then
             Me.BeginInvoke(Sub() txtNroParteSalidaDev.Focus())
             Me.Text = "Regreso Parte Salida"
         End If
     End Sub
 
     Private Sub tabControlRepMov(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
-        If (tabControl.SelectedTab.TabIndex = 9) Then
+        If (tabControl.SelectedIndex = 4) Then
             Me.BeginInvoke(Sub() txtNroParteSalidaDev.Focus())
             Me.Text = "Reporte Movimientos Pallets"
         End If
     End Sub
 
     Private Sub tabControlInfSaldos(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
-        If (tabControl.SelectedTab.TabIndex = 10) Then
+        If (tabControl.SelectedIndex = 5) Then
             Me.BeginInvoke(Sub() txtNroParteSalidaDev.Focus())
             Me.Text = "Informe Saldos Pallets"
         End If
     End Sub
+    Private Sub tabControlSalir(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
+        If (tabControl.SelectedIndex = 6) Then
+            Application.Exit()
+        End If
+    End Sub
+
 
     Private Sub tabControl_Selecting(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
         If DeDoneVengo = 1 And e.TabPageIndex <> 2 Then
