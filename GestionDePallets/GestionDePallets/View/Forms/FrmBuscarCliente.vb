@@ -50,6 +50,7 @@
         If e.KeyCode = Keys.Enter Then
             e.SuppressKeyPress = True
             filtrarCliente()
+            dgvClientes.Focus()
         End If
     End Sub
 

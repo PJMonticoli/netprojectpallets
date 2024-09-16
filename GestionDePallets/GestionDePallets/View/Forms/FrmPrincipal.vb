@@ -51,6 +51,7 @@ Public Class FrmPrincipal
                     txtNroParteSalidaDev.Enabled = False
                     If nroparte = 0 Then
                         DeDoneVengo = 3
+                        dgvClientesDevolucion.Visible = False
                     Else
                         DeDoneVengo = 2
                         palletDevCliente.NroParteSalida = nroparte

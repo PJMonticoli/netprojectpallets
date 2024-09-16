@@ -94,4 +94,12 @@
     Private Sub FrmBuscarTransportista_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         txtBuscarTransportistas.Focus()
     End Sub
+
+    Private Sub txtBuscarTransportistas_KeyDown(sender As Object, e As KeyEventArgs) Handles txtBuscarTransportistas.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            e.SuppressKeyPress = True
+            filtrarTransportista()
+            dgvTransportistas.Focus()
+        End If
+    End Sub
 End Class
