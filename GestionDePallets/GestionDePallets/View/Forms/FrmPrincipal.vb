@@ -31,7 +31,7 @@ Public Class FrmPrincipal
         System.Threading.Thread.CurrentThread.CurrentCulture = New CultureInfo("es-ES")
         System.Threading.Thread.CurrentThread.CurrentUICulture = New CultureInfo("es-ES")
         If Environment.GetCommandLineArgs.Length > 1 Then
-            If Environment.GetCommandLineArgs(1).Length >= 2 Then
+            If Environment.GetCommandLineArgs(1).Length >= 1 Then
                 Dim nroparte As Integer = Environment.GetCommandLineArgs(1)
                 Dim formulario As String = Environment.GetCommandLineArgs(2)
                 Me.DrawerTabControl = Nothing 'Me oculta el boton de mi tabcontrol para evitar navegacion entre pestañas
@@ -45,20 +45,17 @@ Public Class FrmPrincipal
                     btnBuscar_Click(sender, e)
                     Me.Text = "Egreso Pallets por Cliente"
                 ElseIf formulario.ToUpper() = "DevCliente".ToUpper Then
+                    Me.Text = "Regreso Parte Salida"
+                    tabControl.SelectedIndex = 3
+                    btnLimpiarDevCliente.Visible = False
+                    txtNroParteSalidaDev.Enabled = False
                     If nroparte = 0 Then
-                        DeDoneVengo = 2
-                        Me.Text = "Regreso Parte Salida"
-                        tabControl.SelectedIndex = 3
-                        btnLimpiarDevCliente.Visible = False
-                        txtNroParteSalidaDev.Enabled = False
+                        DeDoneVengo = 3
                     Else
                         DeDoneVengo = 2
                         palletDevCliente.NroParteSalida = nroparte
-                        tabControl.SelectedIndex = 3
                         txtNroParteSalidaDev.Text = nroparte
-                        btnLimpiarDevCliente.Visible = False
                         ProcesarParteSalidaDev(nroparte.ToString())
-                        Me.Text = "Regreso Parte Salida"
                     End If
                 End If
             End If
@@ -581,7 +578,7 @@ Public Class FrmPrincipal
 
 
     Private Sub btnRegistrarDevolucion_Click(sender As Object, e As EventArgs) Handles btnRegistrarDevolucion.Click
-        Dim result As DialogResult = MessageBox.Show("¿Está seguro de que desea registrar la Devolución de Cliente?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        Dim result As DialogResult = MessageBox.Show("¿Está seguro de que desea registrar el Regreso por Parte Salida?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
 
         If result = DialogResult.No Then
             Exit Sub
@@ -633,8 +630,8 @@ Public Class FrmPrincipal
 
         ' Mostrar el mensaje de éxito solo si todas las filas fueron procesadas exitosamente
         If exitoTotal Then
-            MsgBox("Devolución registrada con éxito.", MsgBoxStyle.Information, "Éxito")
-            If DeDoneVengo = 2 Then
+            MsgBox("Regreso por Parte Salida registrado con éxito.", MsgBoxStyle.Information, "Éxito")
+            If DeDoneVengo = 2 Or DeDoneVengo = 3 Then
                 txtNroParteSalidaDev.Enabled = True
                 FrmLogin.Close()
                 Me.Close()
@@ -847,11 +844,10 @@ Public Class FrmPrincipal
     Private Sub tabControl_Selecting(sender As Object, e As TabControlCancelEventArgs) Handles tabControl.Selecting
         If DeDoneVengo = 1 And e.TabPageIndex <> 2 Then
             e.Cancel = True ' Cancela el cambio de pestaña para evitar que el usuario navegue por los tabs cuando viene de vb6
-        ElseIf DeDoneVengo = 2 And e.TabPageIndex <> 3 Then
+        ElseIf DeDoneVengo = 2 Or DeDoneVengo = 3 And e.TabPageIndex <> 3 Then
             e.Cancel = True
         End If
     End Sub
-
 #End Region
 
     Private Sub txtObservacion_KeyDown(sender As Object, e As KeyEventArgs) Handles txtObservacion.KeyDown
@@ -1003,10 +999,12 @@ Public Class FrmPrincipal
             End Try
         End If
     End Sub
+
     Private Sub FrmPrincipal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If DeDoneVengo > 0 Then
-            Me.Close()
             FrmLogin.Close()
+            Application.Exit()
         End If
     End Sub
+
 End Class
