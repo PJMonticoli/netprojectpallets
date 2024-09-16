@@ -70,10 +70,10 @@ Partial Class FrmBuscarCliente
         Me.btnBuscarCliente.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.btnBuscarCliente.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btnBuscarCliente.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.btnBuscarCliente.FillColor = System.Drawing.Color.FromArgb(CType(CType(67, Byte), Integer), CType(CType(85, Byte), Integer), CType(CType(133, Byte), Integer))
+        Me.btnBuscarCliente.FillColor = System.Drawing.Color.FromArgb(CType(CType(55, Byte), Integer), CType(CType(71, Byte), Integer), CType(CType(79, Byte), Integer))
         Me.btnBuscarCliente.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnBuscarCliente.ForeColor = System.Drawing.Color.White
-        Me.btnBuscarCliente.HoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(78, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(34, Byte), Integer))
+        Me.btnBuscarCliente.HoverState.FillColor = System.Drawing.Color.Silver
         Me.btnBuscarCliente.Image = CType(resources.GetObject("btnBuscarCliente.Image"), System.Drawing.Image)
         Me.btnBuscarCliente.Location = New System.Drawing.Point(355, 58)
         Me.btnBuscarCliente.Name = "btnBuscarCliente"

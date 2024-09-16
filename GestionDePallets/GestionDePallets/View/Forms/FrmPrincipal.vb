@@ -1,5 +1,7 @@
 ﻿Imports FluentValidation.Results
+Imports Guna.UI2.WinForms
 Imports MaterialSkin
+Imports MaterialSkin.Controls
 Imports System.Globalization
 Imports System.Reflection
 Imports System.Text.RegularExpressions
@@ -18,6 +20,8 @@ Public Class FrmPrincipal
     Public Declare Function GetWindowText Lib "user32.dll" Alias "GetWindowTextA" (ByVal hwnd As Int32, ByVal lpString As String, ByVal cch As Int32) As Int32
     Dim palletDevCliente As New PalletCliente()
     Dim DeDoneVengo As Integer = 0
+
+
     Private Sub FrmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarDashboard()
         cargarGrillas()
@@ -39,22 +43,23 @@ Public Class FrmPrincipal
                     tabControl.SelectedIndex = 2
                     txtNroParteSalida.Text = nroparte
                     btnBuscar_Click(sender, e)
-                    Me.Text = "Pallets por Cliente"
-                ElseIf formulario.ToUpper() = "DevCliente".ToUpper AndAlso nroparte <> "" Then
-                    DeDoneVengo = 2
-                    palletDevCliente.NroParteSalida = nroparte
-                    tabControl.SelectedIndex = 3
-                    txtNroParteSalidaDev.Text = nroparte
-                    btnLimpiarDevCliente.Visible = False
-                    ProcesarParteSalidaDev(nroparte.ToString())
-                    Me.Text = "Regreso Parte Salida"
+                    Me.Text = "Egreso Pallets por Cliente"
                 ElseIf formulario.ToUpper() = "DevCliente".ToUpper Then
-                    DeDoneVengo = 2
-                    palletDevCliente.NroParteSalida = nroparte
-                    tabControl.SelectedIndex = 3
-                    btnLimpiarDevCliente.Visible = False
-                    ProcesarParteSalidaDev(nroparte.ToString())
-                    Me.Text = "Regreso Parte Salida"
+                    If nroparte = 0 Then
+                        DeDoneVengo = 2
+                        Me.Text = "Regreso Parte Salida"
+                        tabControl.SelectedIndex = 3
+                        btnLimpiarDevCliente.Visible = False
+                        txtNroParteSalidaDev.Enabled = False
+                    Else
+                        DeDoneVengo = 2
+                        palletDevCliente.NroParteSalida = nroparte
+                        tabControl.SelectedIndex = 3
+                        txtNroParteSalidaDev.Text = nroparte
+                        btnLimpiarDevCliente.Visible = False
+                        ProcesarParteSalidaDev(nroparte.ToString())
+                        Me.Text = "Regreso Parte Salida"
+                    End If
                 End If
             End If
         End If
@@ -324,6 +329,8 @@ Public Class FrmPrincipal
             limpiarDgvParteSalida()
             If DeDoneVengo = 1 Then
                 txtNroParteSalida.Enabled = True
+                FrmLogin.Close()
+                Me.Close()
                 Application.Exit()
             End If
         End If
@@ -629,6 +636,8 @@ Public Class FrmPrincipal
             MsgBox("Devolución registrada con éxito.", MsgBoxStyle.Information, "Éxito")
             If DeDoneVengo = 2 Then
                 txtNroParteSalidaDev.Enabled = True
+                FrmLogin.Close()
+                Me.Close()
                 Application.Exit()
             End If
         End If
@@ -842,6 +851,7 @@ Public Class FrmPrincipal
             e.Cancel = True
         End If
     End Sub
+
 #End Region
 
     Private Sub txtObservacion_KeyDown(sender As Object, e As KeyEventArgs) Handles txtObservacion.KeyDown

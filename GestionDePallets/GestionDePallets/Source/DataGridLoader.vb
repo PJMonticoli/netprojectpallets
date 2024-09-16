@@ -44,28 +44,28 @@ Public Class DataGridLoader
             _dgv.ColumnHeadersHeight = 35
             _dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
 
-            ' Ocultar la columna NroParteSalida
+
             If _dgv.Columns.Contains("NroParteSalida") Then
                 _dgv.Columns("NroParteSalida").Visible = False
             End If
 
-            ' Ocultar la columna CodFletero
+
             If _dgv.Columns.Contains("CodFletero") Then
                 _dgv.Columns("CodFletero").Visible = False
             End If
 
-            ' Establecer el ancho de la columna NroEntrega
+
             If _dgv.Columns.Contains("NroEntrega") Then
                 _dgv.Columns("NroEntrega").Width = 70
                 _dgv.Columns("NroEntrega").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
             End If
 
-            ' Establecer el ancho de la columna CodCliente
+
             If _dgv.Columns.Contains("CodCliente") Then
                 _dgv.Columns("CodCliente").Visible = False
             End If
 
-            ' Establecer el ancho de la columna RazonSocial
+
             If _dgv.Columns.Contains("Cliente") Then
                 _dgv.Columns("Cliente").Width = 190
             End If
@@ -74,7 +74,7 @@ Public Class DataGridLoader
             If Not _dgv.Columns.Contains("CantidadPallets") Then
                 Dim colCantidadPallets As New DataGridViewTextBoxColumn
                 colCantidadPallets.Name = "CantidadPallets"
-                colCantidadPallets.HeaderText = "Cantidad de Pallets"
+                colCantidadPallets.HeaderText = "Cant. Pallets"
                 colCantidadPallets.Width = 100
                 _dgv.Columns.Add(colCantidadPallets)
             Else
@@ -85,7 +85,7 @@ Public Class DataGridLoader
             If Not _dgv.Columns.Contains("PosicionPalletCamion") Then
                 Dim posicionPallet As New DataGridViewTextBoxColumn
                 posicionPallet.Name = "PosicionPalletCamion"
-                posicionPallet.HeaderText = "Ubicación Pallet en Camión"
+                posicionPallet.HeaderText = "Ubicación en Camión"
                 posicionPallet.Width = 100
                 _dgv.Columns.Add(posicionPallet)
             Else
@@ -236,9 +236,9 @@ Public Class DataGridLoader
 
     Public Sub InicializarGrillaMovimientos(ByRef dgvMovPallets As DataGridView)
         With dgvMovPallets
-            .ColumnHeadersHeight = 28
+            .ColumnHeadersHeight = 30
             .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            .ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 8, FontStyle.Bold)
+            .ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 9, FontStyle.Bold)
             .AllowUserToResizeRows = False
             .ReadOnly = True
             .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None
@@ -276,7 +276,7 @@ Public Class DataGridLoader
         With dgv
             .ColumnHeadersHeight = 30
             .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            .ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 8, FontStyle.Bold)
+            .ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 9, FontStyle.Bold)
             .AllowUserToResizeRows = False
             .ReadOnly = True
             .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
@@ -342,7 +342,7 @@ Public Class DataGridLoader
             .ColumnHeadersHeight = 30
             .ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
             .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            .ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 8, FontStyle.Bold)
+            .ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 9, FontStyle.Bold)
             .AllowUserToResizeRows = False
             .ReadOnly = True
             .AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.None
@@ -399,7 +399,7 @@ Public Class DataGridLoader
             .ColumnHeadersHeight = 30
             .ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing
             .ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-            .ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 8, FontStyle.Bold)
+            .ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 9, FontStyle.Bold)
             .AllowUserToResizeRows = False
             .ReadOnly = True
             .AutoSizeColumnsMode = DataGridViewAutoSizeColumnMode.None
