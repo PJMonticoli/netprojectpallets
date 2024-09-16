@@ -1003,5 +1003,10 @@ Public Class FrmPrincipal
             End Try
         End If
     End Sub
-
+    Private Sub FrmPrincipal_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        If DeDoneVengo > 0 Then
+            Me.Close()
+            FrmLogin.Close()
+        End If
+    End Sub
 End Class
