@@ -348,6 +348,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="palletIcon.ico" />
+    <None Include="Resources\borrar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

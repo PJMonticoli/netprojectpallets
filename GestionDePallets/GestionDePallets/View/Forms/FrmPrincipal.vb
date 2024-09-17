@@ -542,13 +542,40 @@ Public Class FrmPrincipal
         End If
     End Sub
 
+    Private Sub dgvDevCliente_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDevCliente.CellContentClick
+        If e.ColumnIndex = dgvDevCliente.Columns("DeleteButton").Index AndAlso e.RowIndex >= 0 Then
+            ' Obtener la fila seleccionada
+            Dim selectedRow As DataGridViewRow = dgvDevCliente.Rows(e.RowIndex)
+            ' Recuperar el cliente de la fila seleccionada
+            Dim cliente As String = selectedRow.Cells("Cliente").Value.ToString()
+            ' Agrego nuevamente el cliente eliminado a mi dgvClientesDevolucion 
+            Dim newRow As String() = {cliente}
+            dgvClientesDevolucion.Rows.Add(newRow)
+            dgvDevCliente.Rows.RemoveAt(e.RowIndex)
+        End If
+    End Sub
+    Private Sub dgvDevCliente_CellPainting(sender As Object, e As DataGridViewCellPaintingEventArgs) Handles dgvDevCliente.CellPainting
+        If e.ColumnIndex = dgvDevCliente.Columns("DeleteButton").Index AndAlso e.RowIndex >= 0 Then
+            ' Verifica que sea la celda de la columna de botones
+            e.Paint(e.CellBounds, DataGridViewPaintParts.All)
 
+            ' Dibuja la imagen en lugar del texto
+            Dim image As Bitmap = Nothing
+            Dim buttonText As String = ""
 
+            ' Modificar
+            image = My.Resources.borrar
+            buttonText = ""
 
+            If image IsNot Nothing Then
 
-
-
-
+                Dim imageX = CInt(e.CellBounds.Left + (e.CellBounds.Width - image.Width) / 2)
+                Dim imageY = CInt(e.CellBounds.Top + (e.CellBounds.Height - image.Height) / 2)
+                e.Graphics.DrawImage(image, imageX, imageY, image.Width, image.Height)
+            End If
+            e.Handled = True
+        End If
+    End Sub
 
     Private Sub BuscarClienteDev(sender As Object, e As EventArgs) Handles btnBuscarClienteDev.Click
         cboClienteDevolucion.SelectedIndex = -1
@@ -1013,5 +1040,4 @@ Public Class FrmPrincipal
             Application.Exit()
         End If
     End Sub
-
 End Class

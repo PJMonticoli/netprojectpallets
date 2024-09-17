@@ -280,67 +280,77 @@ Public Class DataGridLoader
             .ColumnHeadersDefaultCellStyle.Font = New Font("Arial", 9, FontStyle.Bold)
             .AllowUserToResizeRows = False
             .ReadOnly = True
+            .AllowUserToAddRows = False
             .AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
             .Columns.Clear()
 
             Dim colFechaDev As New DataGridViewTextBoxColumn() With {
-                .Name = "Fecha Devolución",
-                .HeaderText = "Fecha Devolución",
-                .Width = 80,
-                .Visible = False
-            }
+            .Name = "Fecha Devolución",
+            .HeaderText = "Fecha Devolución",
+            .Width = 80,
+            .Visible = False
+        }
             Dim colFechaCargaDev As New DataGridViewTextBoxColumn() With {
-                .Name = "Fecha de Carga",
-                .HeaderText = "Fecha Carga",
-                .Width = 80,
-                .Visible = False
-            }
+            .Name = "Fecha de Carga",
+            .HeaderText = "Fecha Carga",
+            .Width = 80,
+            .Visible = False
+        }
 
             Dim colTransportista As New DataGridViewTextBoxColumn() With {
-                .Name = "Transportista",
-                .HeaderText = "Transportista",
-                .Width = 120
-            }
+            .Name = "Transportista",
+            .HeaderText = "Transportista",
+            .Width = 120,
+            .Visible = False
+        }
 
             Dim colCliente As New DataGridViewTextBoxColumn() With {
-                .Name = "Cliente",
-                .HeaderText = "Cliente",
-                .Width = 100
-            }
+            .Name = "Cliente",
+            .HeaderText = "Cliente",
+            .Width = 100
+        }
             Dim colCantBuenEstado As New DataGridViewTextBoxColumn() With {
-                .Name = "CantBuenEstado",
-                .HeaderText = "Cant.BuenEstado",
-                .Width = 40
-            }
+            .Name = "CantBuenEstado",
+            .HeaderText = "Cant.BuenEstado",
+            .Width = 40
+        }
             colCantBuenEstado.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
             Dim colCantMalEstado As New DataGridViewTextBoxColumn() With {
-                .Name = "CantMalEstado",
-                .HeaderText = "Cant.MalEstado",
-                .Width = 40
-            }
+            .Name = "CantMalEstado",
+            .HeaderText = "Cant.MalEstado",
+            .Width = 40
+        }
             colCantMalEstado.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
             Dim colCantVale As New DataGridViewTextBoxColumn() With {
-                .Name = "CantVale",
-                .HeaderText = "Cant.Vale",
-                .Width = 40
-            }
+            .Name = "CantVale",
+            .HeaderText = "Cant.Vale",
+            .Width = 40
+        }
             colCantVale.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
 
             Dim colObservacion As New DataGridViewTextBoxColumn() With {
-                .Name = "Observación",
-                .HeaderText = "Observación",
-                .Width = 40
-            }
+            .Name = "Observación",
+            .HeaderText = "Observación",
+            .Width = 40
+        }
             Dim colNroParteSalida As New DataGridViewTextBoxColumn() With {
-                .Name = "NroParteSalida",
-                .HeaderText = "NroParteSalida",
-                .Width = 80,
-                .Visible = False
-            }
+            .Name = "NroParteSalida",
+            .HeaderText = "NroParteSalida",
+            .Width = 80,
+            .Visible = False
+        }
+            Dim deleteButtonColumn As New DataGridViewButtonColumn()
+            deleteButtonColumn.Name = "DeleteButton"
+            deleteButtonColumn.HeaderText = "Eliminar"
+            deleteButtonColumn.Text = ""
+            deleteButtonColumn.UseColumnTextForButtonValue = True
+            deleteButtonColumn.Width = 60
 
-            .Columns.AddRange(New DataGridViewColumn() {colFechaDev, colFechaCargaDev, colTransportista, colCliente, colCantBuenEstado, colCantMalEstado, colCantVale, colObservacion, colNroParteSalida})
+            ' Agrega las columnas en el orden deseado
+            .Columns.AddRange(New DataGridViewColumn() {colFechaDev, colFechaCargaDev, colTransportista, colCliente, colCantBuenEstado, colCantMalEstado, colCantVale, colObservacion, colNroParteSalida, deleteButtonColumn})
+
         End With
     End Sub
 
