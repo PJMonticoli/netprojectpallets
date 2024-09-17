@@ -341,12 +341,13 @@ Public Class DataGridLoader
             .Width = 80,
             .Visible = False
         }
-            Dim deleteButtonColumn As New DataGridViewButtonColumn()
-            deleteButtonColumn.Name = "DeleteButton"
-            deleteButtonColumn.HeaderText = "Eliminar"
-            deleteButtonColumn.Text = ""
-            deleteButtonColumn.UseColumnTextForButtonValue = True
-            deleteButtonColumn.Width = 60
+            Dim deleteButtonColumn As New DataGridViewButtonColumn() With {
+            .Name = "DeleteButton",
+            .HeaderText = "Eliminar",
+            .Text = "",
+            .UseColumnTextForButtonValue = True,
+            .Width = 60
+        }
 
             ' Agrega las columnas en el orden deseado
             .Columns.AddRange(New DataGridViewColumn() {colFechaDev, colFechaCargaDev, colTransportista, colCliente, colCantBuenEstado, colCantMalEstado, colCantVale, colObservacion, colNroParteSalida, deleteButtonColumn})
