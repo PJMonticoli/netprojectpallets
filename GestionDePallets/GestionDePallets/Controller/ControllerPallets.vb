@@ -305,16 +305,16 @@ Public Class ControllerPallets
     Public Function cargarGrillaParteSalida(ByVal NroParteSalida As Integer) As DataTable
         Try
             Dim parametros As SqlParameter() = {New SqlParameter("@NroParteSalida", NroParteSalida)}
-            Dim cadenasql = "SELECT ps.NroParteSalida, oe.nroOEntrega as NroEntrega, f.CodFletero, c.CodCliente,CONCAT(c.CodCliente, '- ', c.RazonSocial) AS 'Cliente'
-                          FROM Almacen.dbo.ParteSalida ps 
-                          INNER JOIN Almacen.dbo.oenOEntrega oe ON ps.nroParteSalida = oe.ParteSalida
-                          INNER JOIN CtasCtesSQL.dbo.Fleteros f ON f.CodFletero = ps.CodFletero
-                          INNER JOIN Almacen.dbo.oenOCarga oc ON oe.nroOEntrega = oc.NroOEntrega
-                          INNER JOIN Ventas.dbo.DetalleOCarga doc ON doc.NroOCarga = oc.OCarga
-                          INNER JOIN Ventas.dbo.Pedidos p ON p.NroPedido = doc.NroPedido
-                          INNER JOIN CtasCtesSQL.dbo.Clientes c ON c.CodCliente = p.NroCliente
-                          WHERE ps.NroParteSalida = @NroParteSalida
-                          ORDER BY c.CodCliente"
+            Dim cadenasql = "SELECT DISTINCT ps.NroParteSalida, oe.nroOEntrega AS NroEntrega, f.CodFletero, c.CodCliente, CONCAT(c.CodCliente, '- ', c.RazonSocial) AS 'Cliente'
+                            FROM Almacen.dbo.ParteSalida ps
+                            INNER JOIN Almacen.dbo.oenOEntrega oe ON ps.nroParteSalida = oe.ParteSalida
+                            INNER JOIN CtasCtesSQL.dbo.Fleteros f ON f.CodFletero = ps.CodFletero
+                            INNER JOIN Almacen.dbo.oenOCarga oc ON oe.nroOEntrega = oc.NroOEntrega
+                            INNER JOIN Ventas.dbo.DetalleOCarga doc ON doc.NroOCarga = oc.OCarga
+                            INNER JOIN Ventas.dbo.Pedidos p ON p.NroPedido = doc.NroPedido
+                            INNER JOIN CtasCtesSQL.dbo.Clientes c ON c.CodCliente = p.NroCliente
+                            WHERE ps.NroParteSalida = @NroParteSalida
+                            ORDER BY c.CodCliente"
 
             Dim result As DataTable = GetTablaParam(cadenasql, parametros)
 
