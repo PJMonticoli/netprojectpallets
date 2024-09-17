@@ -21,6 +21,7 @@ CREATE TABLE EstadoDevolucionPallets (
 
 CREATE TABLE Pallets (
     id BIGINT PRIMARY KEY IDENTITY(1,1),
+	NroParteSalida INT,
     Fecha DATE NOT NULL, 
     FechaCarga DATETIME, 
     CodFletero SMALLINT,
