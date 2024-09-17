@@ -1,5 +1,6 @@
 ﻿Public Class PalletModel
     Public Property NroOEntrega As Integer
+    Public Property NroParteSalida As Integer?
     Public Property Fecha As Date
     Public Property FechaCarga As DateTime
     Public Property CodFletero As Short?

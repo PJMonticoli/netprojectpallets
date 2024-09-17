@@ -437,7 +437,6 @@ Public Class FrmPrincipal
 
 
     Private Sub btnSigCliente_Click(sender As Object, e As EventArgs) Handles btnSigCliente.Click
-
         Dim codFleteroNum As Integer
 
         If cboTransportistaDev.SelectedValue Is Nothing OrElse Not Integer.TryParse(cboTransportistaDev.SelectedValue.ToString(), codFleteroNum) Then
@@ -476,6 +475,11 @@ Public Class FrmPrincipal
             Return
         End If
 
+        ' asigno NroParteSalida 999 si viene vacio
+        If String.IsNullOrEmpty(txtNroParteSalidaDev.Text) OrElse txtNroParteSalidaDev.Text = 0 Then
+            txtNroParteSalidaDev.Text = "999"
+        End If
+
         ' Crear una instancia del modelo de datos
         Dim pallet As New PalletModel() With {
         .Fecha = dtpFecha.Value,
@@ -485,7 +489,8 @@ Public Class FrmPrincipal
         .Cantidad = cantidad,
         .CantidadMalEstado = cantidadMalEstado,
         .CantidadVale = cantidadVale,
-        .Observacion = Observacion
+        .Observacion = Observacion,
+        .NroParteSalida = txtNroParteSalidaDev.Text
     }
 
         Dim validador As New DevPalletValidador()
@@ -500,7 +505,8 @@ Public Class FrmPrincipal
             pallet.Cantidad.ToString(),
             pallet.CantidadMalEstado.ToString(),
             pallet.CantidadVale.ToString(),
-            If(String.IsNullOrEmpty(Observacion), "Sin observación", Observacion)
+            If(String.IsNullOrEmpty(Observacion), "Sin observación", Observacion),
+            pallet.NroParteSalida
         }
 
 
@@ -619,8 +625,8 @@ Public Class FrmPrincipal
                 Dim estadoMalo As Integer = If(String.IsNullOrEmpty(row.Cells("CantMalEstado").Value.ToString()), 0, CInt(row.Cells("CantMalEstado").Value))
                 Dim estadoVale As Integer = If(String.IsNullOrEmpty(row.Cells("CantVale").Value.ToString()), 0, CInt(row.Cells("CantVale").Value))
                 Dim observacion As String = row.Cells("Observación").Value.ToString()
-
-                Dim exito As Boolean = ModuloFunciones.RegistrarDevolucionCliente(fechaSeleccionada, clienteCod, transportista, estadoBueno, estadoMalo, estadoVale, codFletero, observacion)
+                Dim nroParteSalida As Integer = row.Cells("NroParteSalida").Value
+                Dim exito As Boolean = ModuloFunciones.RegistrarDevolucionCliente(fechaSeleccionada, clienteCod, transportista, estadoBueno, estadoMalo, estadoVale, codFletero, observacion, nroParteSalida)
 
                 If Not exito Then
                     exitoTotal = False

@@ -110,8 +110,8 @@ Module ModuloFunciones
                 Dim asignacionPallet As New PalletCliente() With {
                 .NroParteSalida = Convert.ToInt32(row.Cells("NroParteSalida").Value),
                 .NroOEntrega = Convert.ToInt32(row.Cells("NroEntrega").Value),
-                .CodFletero = Convert.ToInt32(row.Cells("CodFletero").Value),  ' Agregado
-                .CodCliente = Convert.ToInt32(row.Cells("CodCliente").Value),  ' Agregado
+                .CodFletero = Convert.ToInt32(row.Cells("CodFletero").Value),
+                .CodCliente = Convert.ToInt32(row.Cells("CodCliente").Value),
                 .CantidadPallets = Convert.ToInt32(row.Cells("CantidadPallets").Value),
                 .PosicionEnCamion = Convert.ToString(row.Cells("PosicionPalletCamion").Value)
             }
@@ -125,7 +125,7 @@ Module ModuloFunciones
             End If
         Next
 
-        MessageBox.Show("Todas las asignaciones de pallets se han registrado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        MessageBox.Show("Registro el egreso con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Return True
     End Function
 
@@ -172,7 +172,8 @@ Module ModuloFunciones
     estadoMalo As Integer,
     estadoVale As Integer,
     codFletero As Integer,
-    observacion As String
+    observacion As String,
+    nroParteSalida As Integer
 ) As Boolean
         Dim validator As New DevPalletValidador()
 
@@ -190,7 +191,8 @@ Module ModuloFunciones
             .Cantidad = cantidadBueno,
             .EstadoDevolucionId = 1,
             .TipoPallet = 4010100010001,
-            .Observacion = observacion
+            .Observacion = observacion,
+            .NroParteSalida = nroParteSalida
         }
             Dim validationResult As ValidationResult = validator.Validate(palletBueno)
             If Not validationResult.IsValid Then
@@ -211,7 +213,8 @@ Module ModuloFunciones
             .Cantidad = cantidadMalo,
             .EstadoDevolucionId = 2,
             .TipoPallet = 4010100010001,
-            .Observacion = observacion
+            .Observacion = observacion,
+            .NroParteSalida = nroParteSalida
         }
             Dim validationResult As ValidationResult = validator.Validate(palletMalo)
             If Not validationResult.IsValid Then
@@ -232,7 +235,8 @@ Module ModuloFunciones
             .Cantidad = cantidadVale,
             .EstadoDevolucionId = 3,
             .TipoPallet = 4010100010001,
-            .Observacion = observacion
+            .Observacion = observacion,
+            .NroParteSalida = nroParteSalida
         }
             Dim validationResult As ValidationResult = validator.Validate(palletVale)
             If Not validationResult.IsValid Then

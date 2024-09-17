@@ -2,6 +2,7 @@
 Imports LiveCharts
 Imports LiveCharts.Wpf
 Imports FluentValidation.Results
+Imports System.Windows.Input
 
 Public Class ControllerPallets
     Inherits ServidorSQL
@@ -236,8 +237,8 @@ Public Class ControllerPallets
             Return False
         End If
 
-        Dim query As String = "INSERT INTO Almacen.dbo.Pallets (Fecha, FechaCarga, CodFletero, CodCliente, Cantidad, EstadoDevolucionId, TipoPallet, TipoMovimientoId, Observacion, Retorna) " &
-                       "VALUES (@Fecha, SYSDATETIME(), @CodFletero, @CodCliente, @Cantidad, @EstadoDevolucionId, @TipoPallet, @TipoMovimientoId, @Observacion, @Retorna)"
+        Dim query As String = "INSERT INTO Almacen.dbo.Pallets (Fecha, FechaCarga, CodFletero, CodCliente, Cantidad, EstadoDevolucionId, TipoPallet, TipoMovimientoId, Observacion, Retorna,NroParteSalida) " &
+                       "VALUES (@Fecha, SYSDATETIME(), @CodFletero, @CodCliente, @Cantidad, @EstadoDevolucionId, @TipoPallet, @TipoMovimientoId, @Observacion, @Retorna,@NroParteSalida)"
 
         Dim parametros As SqlParameter() = {
         New SqlParameter("@Fecha", SqlDbType.Date) With {.Value = pallet.Fecha},
@@ -353,10 +354,10 @@ Public Class ControllerPallets
     }
 
         Try
-            ' Aquí obtenemos el ID generado por SCOPE_IDENTITY() para cada inserción
+            ' Aquí obtnego el ID generado por SCOPE_IDENTITY() para cada inserción
             Dim idAsignacion As Integer = CInt(ServidorSQL.GetTablaParam(queryAsignacion, parametrosAsignacion).Rows(0)(0))
 
-            ' Si la inserción fue exitosa, registramos en la tabla Pallets con el ID de Asignación generado
+            ' Si la inserción fue exitosa, registro en la tabla Pallets con el ID de Asignación generado
             Dim successPallet As Boolean = InsertarPallet(asignacion, idAsignacion)
             If successPallet Then
                 Return True
@@ -375,8 +376,8 @@ Public Class ControllerPallets
 
 
     Public Function InsertarPallet(ByVal asignacion As PalletCliente, ByVal idAsignacion As Integer) As Boolean
-        Dim queryPallet As String = "INSERT INTO Almacen.dbo.Pallets (Fecha, FechaCarga, CodFletero, CodCliente, Cantidad, EstadoDevolucionId, TipoMovimientoId, Observacion, Retorna, TipoPallet, AsignacionPalletId) " &
-                                "VALUES (CONVERT(DATE, SYSDATETIMEOFFSET()), CONVERT(DATETIME, SYSDATETIMEOFFSET()), @CodFletero, @CodCliente, @Cantidad, @EstadoDevolucionId, @TipoMovimientoId, @Observacion, @Retorna, @TipoPallet, @AsignacionPalletId)"
+        Dim queryPallet As String = "INSERT INTO Almacen.dbo.Pallets (Fecha, FechaCarga, CodFletero, CodCliente, Cantidad, EstadoDevolucionId, TipoMovimientoId, Observacion, Retorna, TipoPallet, AsignacionPalletId,NroParteSalida) " &
+                                "VALUES (CONVERT(DATE, SYSDATETIMEOFFSET()), CONVERT(DATETIME, SYSDATETIMEOFFSET()), @CodFletero, @CodCliente, @Cantidad, @EstadoDevolucionId, @TipoMovimientoId, @Observacion, @Retorna, @TipoPallet, @AsignacionPalletId,@NroParteSalida)"
 
         Dim parametrosPallet As SqlParameter() = {
         New SqlParameter("@CodFletero", SqlDbType.SmallInt) With {.Value = asignacion.CodFletero},
@@ -387,7 +388,8 @@ Public Class ControllerPallets
         New SqlParameter("@Observacion", SqlDbType.NVarChar) With {.Value = "Egreso Parte Salida,Cant Pallets por Cliente"},
         New SqlParameter("@Retorna", SqlDbType.Bit) With {.Value = True},
         New SqlParameter("@TipoPallet", SqlDbType.BigInt) With {.Value = 4010100010001}, 'Dejo por defecto CodInsumo TARIMAS TIPO ARLOG 1x1,20 mts.
-        New SqlParameter("@AsignacionPalletId", SqlDbType.Int) With {.Value = idAsignacion}
+        New SqlParameter("@AsignacionPalletId", SqlDbType.Int) With {.Value = idAsignacion},
+        New SqlParameter("@NroParteSalida", SqlDbType.Int) With {.Value = asignacion.NroParteSalida}
     }
 
         Try
@@ -510,20 +512,21 @@ Public Class ControllerPallets
 
 
     Public Function InsertarDevolucionPallet(ByVal pallet As PalletModel) As Integer
-        Dim sql As String = "INSERT INTO Almacen.dbo.Pallets (Fecha, FechaCarga, CodFletero, CodCliente, Cantidad, EstadoDevolucionId, TipoMovimientoId, Observacion, Retorna, TipoPallet) " &
-                        "VALUES (@Fecha, CONVERT(DATETIME, SYSDATETIMEOFFSET()), @CodFletero, @CodCliente, @Cantidad, @EstadoDevolucionId, @TipoMovimientoId, @Observacion, @Retorna, @TipoPallet)"
+        Dim sql As String = "INSERT INTO Almacen.dbo.Pallets (Fecha, FechaCarga, CodFletero, CodCliente, Cantidad, EstadoDevolucionId, TipoMovimientoId, Observacion, Retorna, TipoPallet, NroParteSalida) " &
+                        "VALUES (@Fecha, CONVERT(DATETIME, SYSDATETIMEOFFSET()), @CodFletero, @CodCliente, @Cantidad, @EstadoDevolucionId, @TipoMovimientoId, @Observacion, @Retorna, @TipoPallet, @NroParteSalida)"
 
         Dim parametros() As SqlParameter = {
-        New SqlParameter("@Fecha", SqlDbType.Date) With {.Value = pallet.Fecha},
-        New SqlParameter("@CodFletero", SqlDbType.SmallInt) With {.Value = pallet.CodFletero},
-        New SqlParameter("@CodCliente", SqlDbType.Int) With {.Value = pallet.CodCliente},
-        New SqlParameter("@Cantidad", SqlDbType.Int) With {.Value = pallet.Cantidad},
-        New SqlParameter("@EstadoDevolucionId", SqlDbType.Int) With {.Value = pallet.EstadoDevolucionId},
-        New SqlParameter("@TipoMovimientoId", SqlDbType.Int) With {.Value = 4},
-        New SqlParameter("@Observacion", SqlDbType.VarChar) With {.Value = pallet.Observacion},
-        New SqlParameter("@Retorna", SqlDbType.Bit) With {.Value = True},
-        New SqlParameter("@TipoPallet", SqlDbType.BigInt) With {.Value = 4010100010001}
-    }
+            New SqlParameter("@Fecha", SqlDbType.Date) With {.Value = pallet.Fecha},
+            New SqlParameter("@CodFletero", SqlDbType.SmallInt) With {.Value = pallet.CodFletero},
+            New SqlParameter("@CodCliente", SqlDbType.Int) With {.Value = pallet.CodCliente},
+            New SqlParameter("@Cantidad", SqlDbType.Int) With {.Value = pallet.Cantidad},
+            New SqlParameter("@EstadoDevolucionId", SqlDbType.Int) With {.Value = pallet.EstadoDevolucionId},
+            New SqlParameter("@TipoMovimientoId", SqlDbType.Int) With {.Value = 4},
+            New SqlParameter("@Observacion", SqlDbType.VarChar) With {.Value = pallet.Observacion},
+            New SqlParameter("@Retorna", SqlDbType.Bit) With {.Value = True},
+            New SqlParameter("@TipoPallet", SqlDbType.BigInt) With {.Value = pallet.TipoPallet},
+            New SqlParameter("@NroParteSalida", SqlDbType.Int) With {.Value = pallet.NroParteSalida}
+        }
 
         Try
             Dim filasAfectadas As Integer = ServidorSQL.InsertTablaParam(sql, parametros)
@@ -533,6 +536,7 @@ Public Class ControllerPallets
             Return 0
         End Try
     End Function
+
 
 End Class
 

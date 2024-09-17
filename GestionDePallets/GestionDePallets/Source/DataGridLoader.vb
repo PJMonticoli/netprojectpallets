@@ -177,6 +177,7 @@ Public Class DataGridLoader
             Return
         End If
 
+
         ' Inserta la asignación en la grilla
         If _dgv.CurrentRow IsNot Nothing Then
             Dim posiciones As String = $"{posicionDesde} a {posicionHasta}"
@@ -332,8 +333,14 @@ Public Class DataGridLoader
                 .HeaderText = "Observación",
                 .Width = 40
             }
+            Dim colNroParteSalida As New DataGridViewTextBoxColumn() With {
+                .Name = "NroParteSalida",
+                .HeaderText = "NroParteSalida",
+                .Width = 80,
+                .Visible = False
+            }
 
-            .Columns.AddRange(New DataGridViewColumn() {colFechaDev, colFechaCargaDev, colTransportista, colCliente, colCantBuenEstado, colCantMalEstado, colCantVale, colObservacion})
+            .Columns.AddRange(New DataGridViewColumn() {colFechaDev, colFechaCargaDev, colTransportista, colCliente, colCantBuenEstado, colCantMalEstado, colCantVale, colObservacion, colNroParteSalida})
         End With
     End Sub
 

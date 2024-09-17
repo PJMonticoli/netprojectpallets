@@ -1925,9 +1925,9 @@ Partial Class FrmPrincipal
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold)
         Me.Label15.Location = New System.Drawing.Point(395, 113)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(92, 18)
+        Me.Label15.Size = New System.Drawing.Size(163, 18)
         Me.Label15.TabIndex = 78
-        Me.Label15.Text = "Devolución"
+        Me.Label15.Text = "Cantidad Devolución"
         '
         'txtCantBuenEstado
         '
@@ -1935,7 +1935,7 @@ Partial Class FrmPrincipal
         Me.txtCantBuenEstado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCantBuenEstado.Depth = 0
         Me.txtCantBuenEstado.Font = New System.Drawing.Font("Roboto", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.txtCantBuenEstado.Hint = "Cant. Buen Estado"
+        Me.txtCantBuenEstado.Hint = "Bueno"
         Me.txtCantBuenEstado.LeadingIcon = Nothing
         Me.txtCantBuenEstado.Location = New System.Drawing.Point(397, 136)
         Me.txtCantBuenEstado.MaxLength = 50
@@ -1953,7 +1953,7 @@ Partial Class FrmPrincipal
         Me.txtCantMalEstado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCantMalEstado.Depth = 0
         Me.txtCantMalEstado.Font = New System.Drawing.Font("Roboto", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.txtCantMalEstado.Hint = "Cant. Mal Estado"
+        Me.txtCantMalEstado.Hint = "Malo"
         Me.txtCantMalEstado.LeadingIcon = Nothing
         Me.txtCantMalEstado.Location = New System.Drawing.Point(570, 136)
         Me.txtCantMalEstado.MaxLength = 50
@@ -1971,7 +1971,7 @@ Partial Class FrmPrincipal
         Me.txtCantVale.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtCantVale.Depth = 0
         Me.txtCantVale.Font = New System.Drawing.Font("Roboto", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        Me.txtCantVale.Hint = "Cant. Vale"
+        Me.txtCantVale.Hint = "Vale"
         Me.txtCantVale.LeadingIcon = Nothing
         Me.txtCantVale.Location = New System.Drawing.Point(741, 136)
         Me.txtCantVale.MaxLength = 50
@@ -2133,7 +2133,7 @@ Partial Class FrmPrincipal
         '
         Me.dtpFechaDev.Checked = True
         Me.dtpFechaDev.FillColor = System.Drawing.Color.Empty
-        Me.dtpFechaDev.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.dtpFechaDev.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpFechaDev.ForeColor = System.Drawing.Color.Black
         Me.dtpFechaDev.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.dtpFechaDev.Location = New System.Drawing.Point(18, 28)
