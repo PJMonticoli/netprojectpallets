@@ -249,7 +249,8 @@ Public Class ControllerPallets
         New SqlParameter("@TipoPallet", SqlDbType.BigInt) With {.Value = pallet.TipoPallet},
         New SqlParameter("@TipoMovimientoId", SqlDbType.Int) With {.Value = pallet.TipoMovimientoId},
         New SqlParameter("@Observacion", SqlDbType.NVarChar, 50) With {.Value = pallet.Observacion},
-        New SqlParameter("@Retorna", SqlDbType.Bit) With {.Value = pallet.Retorna}
+        New SqlParameter("@Retorna", SqlDbType.Bit) With {.Value = pallet.Retorna},
+        New SqlParameter("@NroParteSalida", SqlDbType.Int) With {.Value = 999}
     }
 
         Try
@@ -358,7 +359,7 @@ Public Class ControllerPallets
             Dim idAsignacion As Integer = CInt(ServidorSQL.GetTablaParam(queryAsignacion, parametrosAsignacion).Rows(0)(0))
 
             ' Si la inserción fue exitosa, registro en la tabla Pallets con el ID de Asignación generado
-            Dim successPallet As Boolean = InsertarPallet(asignacion, idAsignacion)
+            Dim successPallet As Boolean = InsertarPalletAsignacion(asignacion, idAsignacion)
             If successPallet Then
                 Return True
             Else
@@ -375,7 +376,7 @@ Public Class ControllerPallets
 
 
 
-    Public Function InsertarPallet(ByVal asignacion As PalletCliente, ByVal idAsignacion As Integer) As Boolean
+    Public Function InsertarPalletAsignacion(ByVal asignacion As PalletCliente, ByVal idAsignacion As Integer) As Boolean
         Dim queryPallet As String = "INSERT INTO Almacen.dbo.Pallets (Fecha, FechaCarga, CodFletero, CodCliente, Cantidad, EstadoDevolucionId, TipoMovimientoId, Observacion, Retorna, TipoPallet, AsignacionPalletId,NroParteSalida) " &
                                 "VALUES (CONVERT(DATE, SYSDATETIMEOFFSET()), CONVERT(DATETIME, SYSDATETIMEOFFSET()), @CodFletero, @CodCliente, @Cantidad, @EstadoDevolucionId, @TipoMovimientoId, @Observacion, @Retorna, @TipoPallet, @AsignacionPalletId,@NroParteSalida)"
 

@@ -885,9 +885,11 @@ Public Class FrmPrincipal
 #End Region
 
     Private Sub txtObservacion_KeyDown(sender As Object, e As KeyEventArgs) Handles txtObservacion.KeyDown
-        btnRegistrar_Click(sender, e)
-        e.Handled = True
-        e.SuppressKeyPress = True
+        If e.KeyCode = Keys.Enter Then
+            btnRegistrar_Click(sender, e)
+            e.Handled = True
+            e.SuppressKeyPress = True
+        End If
     End Sub
 
     Private Sub txtNroParteSalida_KeyDown(sender As Object, e As KeyEventArgs) Handles txtNroParteSalida.KeyDown
