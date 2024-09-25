@@ -249,7 +249,8 @@ Public Class ControllerPallets
         New SqlParameter("@TipoPallet", SqlDbType.BigInt) With {.Value = pallet.TipoPallet},
         New SqlParameter("@TipoMovimientoId", SqlDbType.Int) With {.Value = pallet.TipoMovimientoId},
         New SqlParameter("@Observacion", SqlDbType.NVarChar, 50) With {.Value = pallet.Observacion},
-        New SqlParameter("@Retorna", SqlDbType.Bit) With {.Value = pallet.Retorna}
+        New SqlParameter("@Retorna", SqlDbType.Bit) With {.Value = pallet.Retorna},
+        New SqlParameter("@NroParteSalida", SqlDbType.Bit) With {.Value = 999}
     }
 
         Try
