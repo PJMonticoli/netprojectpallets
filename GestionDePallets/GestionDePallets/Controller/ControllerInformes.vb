@@ -52,7 +52,7 @@ Public Class ControllerInformes
                             LEFT JOIN CtasCtesSQL.dbo.Clientes c ON p.CodCliente = c.CodCliente
                             LEFT JOIN CtasCtesSQL.dbo.Fleteros f ON p.CodFletero = f.CodFletero
                             INNER JOIN Almacen.dbo.TipoMovimientoPallets tmp ON p.TipoMovimientoId = tmp.id
-                            INNER JOIN Proveedores.dbo.Insumos i ON i.codInsumo = p.TipoPallet
+                            LEFT JOIN Proveedores.dbo.Insumos i ON i.codInsumo = p.TipoPallet
                             INNER JOIN Almacen.dbo.EstadoDevolucionPallets edp ON edp.id = p.EstadoDevolucionId
                             WHERE p.Fecha >= DATEADD(DAY, -30, GETDATE()) AND p.TipoMovimientoId IN (3,4) "
 

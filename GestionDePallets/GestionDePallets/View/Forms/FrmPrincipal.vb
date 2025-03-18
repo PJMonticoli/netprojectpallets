@@ -119,7 +119,7 @@ Public Class FrmPrincipal
         ComboBoxFunctions.CargarComboGeneral(cboTipoMovimiento, 1)
         cboTipoMovimiento.SelectedIndex = -1
         ComboBoxFunctions.CargarComboGeneral(cboTipoPallet, 1)
-        cboTipoPallet.SelectedIndex = 2
+        cboTipoPallet.SelectedIndex = -1
 
         ' Configurar ComboBox libreriaGuna
         ComboBoxFunctions.CargarComboGeneral(cboCliente, 2)
@@ -1041,5 +1041,9 @@ Public Class FrmPrincipal
             FrmLogin.Close()
             Application.Exit()
         End If
+    End Sub
+
+    Private Sub MaterialCard9_Paint(sender As Object, e As PaintEventArgs) Handles MaterialCard9.Paint
+
     End Sub
 End Class
