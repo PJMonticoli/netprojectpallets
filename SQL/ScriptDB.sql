@@ -1,4 +1,6 @@
 -- TABLAS NUEVAS
+USE [Almacen]
+GO
 CREATE TABLE TipoMovimientoPallets (
     id INT PRIMARY KEY IDENTITY(1,1),
     descripcion NVARCHAR(50) NOT NULL unique 
@@ -47,7 +49,8 @@ GO
 
 SET QUOTED_IDENTIFIER ON
 GO
-
+USE [CtasCtesSQL]
+GO
 CREATE TABLE [dbo].[Clientes](
 	[CodCliente] [int] NOT NULL,
 	[RazonSocial] [varchar](50) NULL,
@@ -220,7 +223,7 @@ GO
 EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'1-0' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'Clientes', @level2type=N'COLUMN',@level2name=N'EnvioAutomaticoPDF'
 GO
 
-USE [GestionPallets]
+USE [CtasCtesSQL]
 GO
 
 
@@ -264,15 +267,7 @@ GO
 
 
 
-CREATE INDEX idx_pallets_fecha ON pallets (fecha);
-
-CREATE INDEX idx_pallets_transporte_id ON pallets (cod_fletero);
-
-CREATE INDEX idx_pallets_cliente_id ON pallets (cod_cliente);
-
-
-
-USE [GestionPallets]
+USE [Proveedores]
 GO
 
 /****** Object:  Table [dbo].[Insumos]    Script Date: 21/08/2024 10:38:19 ******/
