@@ -12,41 +12,41 @@ VALUES ('Buen Estado'),('Mal Estado'),('Vale');
 -- Inserts mov Pallets con EstadoDevolucion "Mal Estado"
 INSERT INTO Almacen.dbo.Pallets (Fecha, FechaCarga, CodFletero, CodCliente, Cantidad, EstadoDevolucionId, TipoPallet, TipoMovimientoId, Observacion, Retorna)
 VALUES 
-('2025-02-20T11:00:00', SYSDATETIME(), 0, 0, 50, 2, 2, 1, 'Daño en Transporte', 1),
-('2025-02-18T15:15:00', SYSDATETIME(), 0, 0, 75, 2, 1, 1, 'Problemas en Almacenaje', 1),
-('2025-02-05T09:30:00', SYSDATETIME(), 0, 0, 100, 2, 2, 2, 'Contaminación', 1),
-('2025-02-15T13:00:00', SYSDATETIME(), 0, 0, 25, 2, 2, 1, 'Falta de Inspección', 1),
-('2025-02-10T12:00:00', SYSDATETIME(), 4, 108, 200, 2, 2, 4, 'Devolucion cliente vale', 1),
-('2025-02-15T13:00:00', SYSDATETIME(), 3, 120, 120, 2, 2, 3, 'Egreso sin devolucion', 0),
-('2025-02-15T13:00:00', SYSDATETIME(), 0, 0, 75, 2, 2, 1, 'Falta de Inspección', 1);
+('2025-02-20T11:00:00', SYSDATETIME(), 0, 0, 50, 2, '102344200', 1, 'Daño en Transporte', 1),
+('2025-02-18T15:15:00', SYSDATETIME(), 0, 0, 75, 2, '102344200', 1, 'Problemas en Almacenaje', 1),
+('2025-02-05T09:30:00', SYSDATETIME(), 0, 0, 100, 2, '102344200', 2, 'Contaminación', 1),
+('2025-02-15T13:00:00', SYSDATETIME(), 0, 0, 25, 2, '102344200', 1, 'Falta de Inspección', 1),
+('2025-02-10T12:00:00', SYSDATETIME(), 4, 108, 200, '102344200', 2, 4, 'Devolucion cliente vale', 1),
+('2025-02-15T13:00:00', SYSDATETIME(), 3, 120, 120, '102344200', 2, 3, 'Egreso sin devolucion', 0),
+('2025-02-15T13:00:00', SYSDATETIME(), 0, 0, 75, 2, '102344200', 1, 'Falta de Inspección', 1);
 
 -- Inserts mov Pallets con EstadoDevolucion "Vale"
 INSERT INTO Almacen.dbo.Pallets (Fecha, FechaCarga, CodFletero, CodCliente, Cantidad, EstadoDevolucionId, TipoPallet, TipoMovimientoId, Observacion, Retorna)
 VALUES 
-('2025-02-20T11:00:00', SYSDATETIME(), 0, 0, 50, 3, 2, 1, 'Devolución con vale', 1),
-('2025-02-18T15:15:00', SYSDATETIME(), 0, 0, 75, 3, 1, 1, 'Devolución con vale', 1),
-('2025-02-05T09:30:00', SYSDATETIME(), 0, 0, 100, 3, 2, 2, 'Devolución con vale', 1),
-('2025-03-15T13:00:00', SYSDATETIME(), 0, 0, 25, 3, 2, 1, 'Devolución con vale', 1),
-('2025-03-10T12:00:00', SYSDATETIME(), 4, 108, 200, 3, 2, 4, 'Devolución con vale', 1),
-('2025-03-10T12:00:00', SYSDATETIME(), 3, 107, 150, 3, 2, 4, 'Devolución con vale', 1),
-('2025-03-10T12:00:00', SYSDATETIME(), 2, 105, 120, 3, 2, 4, 'Devolución con vale', 1),
-('2025-03-10T12:00:00', SYSDATETIME(), 1, 105, 100, 3, 2, 4, 'Devolución con vale', 1),
-('2025-03-15T13:00:00', SYSDATETIME(), 3, 120, 120, 3, 2, 3, 'Devolución con vale', 0),
-('2025-03-15T13:00:00', SYSDATETIME(), 0, 0, 75, 3, 2, 1, 'Devolución con vale', 1);
+('2025-02-20T11:00:00', SYSDATETIME(), 0, 0, 50, 3, '4010100010001', 1, 'Devolución con vale', 1),
+('2025-02-18T15:15:00', SYSDATETIME(), 0, 0, 75, 3, '4010100010001', 1, 'Devolución con vale', 1),
+('2025-02-05T09:30:00', SYSDATETIME(), 0, 0, 100, 3, '4010100010001', 2, 'Devolución con vale', 1),
+('2025-03-15T13:00:00', SYSDATETIME(), 0, 0, 25, 3, '4010100010001', 1, 'Devolución con vale', 1),
+('2025-03-10T12:00:00', SYSDATETIME(), 4, 108, 200, '4010100010001', 2, 4, 'Devolución con vale', 1),
+('2025-03-10T12:00:00', SYSDATETIME(), 3, 107, 150, '4010100010001', 2, 4, 'Devolución con vale', 1),
+('2025-03-10T12:00:00', SYSDATETIME(), 2, 105, 120, '4010100010001', 2, 4, 'Devolución con vale', 1),
+('2025-03-10T12:00:00', SYSDATETIME(), 1, 105, 100, '4010100010001', 2, 4, 'Devolución con vale', 1),
+('2025-03-15T13:00:00', SYSDATETIME(), 3, 120, 120, '4010100010001', 2, 3, 'Devolución con vale', 0),
+('2025-03-15T13:00:00', SYSDATETIME(), 0, 0, 75, 3, '4010100010001', 1, 'Devolución con vale', 1);
 
 -- Inserts mov Pallets con EstadoDevolucion "Vale"
 INSERT INTO Almacen.dbo.Pallets (Fecha, FechaCarga, CodFletero, CodCliente, Cantidad, EstadoDevolucionId, TipoPallet, TipoMovimientoId, Observacion, Retorna)
 VALUES 
-('2025-02-20T11:00:00', SYSDATETIME(), 0, 0, 50, 3, 2, 1, 'Devolución con vale', 1),
-('2025-02-18T15:15:00', SYSDATETIME(), 0, 0, 75, 3, 1, 1, 'Devolución con vale', 1),
-('2025-02-05T09:30:00', SYSDATETIME(), 0, 0, 100, 3, 2, 2, 'Devolución con vale', 1),
-('2025-03-15T13:00:00', SYSDATETIME(), 0, 0, 25, 3, 2, 1, 'Devolución con vale', 1),
-('2025-03-10T12:00:00', SYSDATETIME(), 4, 108, 200, 3, 2, 4, 'Devolución con vale', 1),
-('2025-03-10T12:00:00', SYSDATETIME(), 3, 107, 150, 3, 2, 4, 'Devolución con vale', 1),
-('2025-03-10T12:00:00', SYSDATETIME(), 2, 105, 120, 3, 2, 4, 'Devolución con vale', 1),
-('2025-03-10T12:00:00', SYSDATETIME(), 1, 105, 100, 3, 2, 4, 'Devolución con vale', 1),
-('2025-03-15T13:00:00', SYSDATETIME(), 3, 120, 120, 3, 2, 3, 'Devolución con vale', 0),
-('2025-03-15T13:00:00', SYSDATETIME(), 0, 0, 75, 3, 2, 1, 'Devolución con vale', 1);
+('2025-02-20T11:00:00', SYSDATETIME(), 0, 0, 50, 3, '10204300', 1, 'Devolución con vale', 1),
+('2025-02-18T15:15:00', SYSDATETIME(), 0, 0, 75, 3, '10204300', 1, 'Devolución con vale', 1),
+('2025-02-05T09:30:00', SYSDATETIME(), 0, 0, 100, 3, '10204300', 2, 'Devolución con vale', 1),
+('2025-03-15T13:00:00', SYSDATETIME(), 0, 0, 25, 3, '10204300', 1, 'Devolución con vale', 1),
+('2025-03-10T12:00:00', SYSDATETIME(), 4, 108, 200, '10204300', 2, 4, 'Devolución con vale', 1),
+('2025-03-10T12:00:00', SYSDATETIME(), 3, 107, 150, '10204300', 2, 4, 'Devolución con vale', 1),
+('2025-03-10T12:00:00', SYSDATETIME(), 2, 105, 120, '10204300', 2, 4, 'Devolución con vale', 1),
+('2025-03-10T12:00:00', SYSDATETIME(), 1, 105, 100, '10204300', 2, 4, 'Devolución con vale', 1),
+('2025-03-15T13:00:00', SYSDATETIME(), 3, 120, 120, '10204300', 2, 3, 'Devolución con vale', 0),
+('2025-03-15T13:00:00', SYSDATETIME(), 0, 0, 75, 3, '10204300', 1, 'Devolución con vale', 1);
 
 
 INSERT INTO CtasCtesSQL.dbo.Clientes (CodCliente, RazonSocial, Direccion, CodProvincia, CUIT, CodEstadoCliente)
